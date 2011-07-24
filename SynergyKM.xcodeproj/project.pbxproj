@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -56,7 +56,7 @@
 		C40DF9050E244EA800450B52 /* SynergyPref.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FF0E244EA400450B52 /* SynergyPref.png */; };
 		C40DF9420E24582100450B52 /* Synergy.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF9410E24582100450B52 /* Synergy.png */; };
 		C40DF9450E24582C00450B52 /* Synergy.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF9410E24582100450B52 /* Synergy.png */; };
-		C423609010547B2F00B3C264 /* SynergyKM.prefpane in Resources */ = {isa = PBXBuildFile; fileRef = CA6C73EE083B9AE60006D65C /* SynergyKM.prefpane */; };
+		C423609010547B2F00B3C264 /* SynergyKM.prefPane in Resources */ = {isa = PBXBuildFile; fileRef = CA6C73EE083B9AE60006D65C /* SynergyKM.prefPane */; };
 		C42360C810547DB600B3C264 /* Synergy.icns in Resources */ = {isa = PBXBuildFile; fileRef = CAA598720840DC1F0076CB83 /* Synergy.icns */; };
 		C466FA461006618A00DEB597 /* synergyc in Resources */ = {isa = PBXBuildFile; fileRef = C466FA441006618A00DEB597 /* synergyc */; };
 		C466FA471006618A00DEB597 /* synergys in Resources */ = {isa = PBXBuildFile; fileRef = C466FA451006618A00DEB597 /* synergys */; };
@@ -359,7 +359,7 @@
 		CA6C739F083B985E0006D65C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CA6C73A3083B986D0006D65C /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 		CA6C73A6083B98830006D65C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CA6C73EE083B9AE60006D65C /* SynergyKM.prefpane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynergyKM.prefpane; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6C73EE083B9AE60006D65C /* SynergyKM.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynergyKM.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6C7445083B9CE10006D65C /* LCSStdIOTaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LCSStdIOTaskWrapper.h; sourceTree = "<group>"; };
 		CA6C7446083B9CE10006D65C /* LCSStdIOTaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LCSStdIOTaskWrapper.m; sourceTree = "<group>"; };
 		CA6C7447083B9CE10006D65C /* SDConstants.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDConstants.h; sourceTree = "<group>"; };
@@ -674,7 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6C7372083B96D50006D65C /* Synergyd.app */,
-				CA6C73EE083B9AE60006D65C /* SynergyKM.prefpane */,
+				CA6C73EE083B9AE60006D65C /* SynergyKM.prefPane */,
 				CA5B4F0B083DF8D00071F3C7 /* SynergyKM.menu */,
 				CA05913E089C2E6B00A3901F /* quitsynergyd */,
 				CA059237089C32C900A3901F /* SynergyKM Installer.app */,
@@ -805,7 +805,7 @@
 			);
 			name = Prefpane;
 			productName = Prefpane;
-			productReference = CA6C73EE083B9AE60006D65C /* SynergyKM.prefpane */;
+			productReference = CA6C73EE083B9AE60006D65C /* SynergyKM.prefPane */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -813,9 +813,16 @@
 /* Begin PBXProject section */
 		CA6C72EB083B926D0006D65C /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = CA3CDB81087AF15F00A4B356 /* Build configuration list for PBXProject "SynergyKM" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = CA6C72E7083B926D0006D65C;
 			productRefGroup = CA6C7373083B96D50006D65C /* Products */;
 			projectDirPath = "";
@@ -868,7 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C42360C810547DB600B3C264 /* Synergy.icns in Resources */,
-				C423609010547B2F00B3C264 /* SynergyKM.prefpane in Resources */,
+				C423609010547B2F00B3C264 /* SynergyKM.prefPane in Resources */,
 				CA05925F089C337E00A3901F /* MainMenu.nib in Resources */,
 				CA059245089C32DF00A3901F /* quitsynergyd in Resources */,
 			);
@@ -1144,6 +1151,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = quitsynergyd;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1151,6 +1159,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = quitsynergyd;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1198,6 +1207,7 @@
 				GCC_MODEL_TUNING = G4;
 				INFOPLIST_FILE = Components/Installer/Info.plist;
 				PRODUCT_NAME = "SynergyKM Installer";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1207,6 +1217,7 @@
 				GCC_MODEL_TUNING = G4;
 				INFOPLIST_FILE = Components/Installer/Info.plist;
 				PRODUCT_NAME = "SynergyKM Installer";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1217,6 +1228,7 @@
 				GCC_PREFIX_HEADER = Components/Common/SynergyKM_Prefix.pch;
 				INFOPLIST_FILE = Components/Daemon/Resources/Info.plist;
 				PRODUCT_NAME = Synergyd;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1227,6 +1239,7 @@
 				GCC_PREFIX_HEADER = Components/Common/SynergyKM_Prefix.pch;
 				INFOPLIST_FILE = Components/Daemon/Resources/Info.plist;
 				PRODUCT_NAME = Synergyd;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1240,6 +1253,7 @@
 				INFOPLIST_FILE = Components/StatusMenu/Resources/Info.plist;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = SynergyKM;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = menu;
 			};
 			name = Debug;
@@ -1254,6 +1268,7 @@
 				INFOPLIST_FILE = Components/StatusMenu/Resources/Info.plist;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = SynergyKM;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = menu;
 			};
 			name = Release;
@@ -1267,6 +1282,7 @@
 				INFOPLIST_FILE = Components/Prefpane/Resources/Info.plist;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = SynergyKM;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -1280,6 +1296,7 @@
 				INFOPLIST_FILE = Components/Prefpane/Resources/Info.plist;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_NAME = SynergyKM;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = prefpane;
 			};
 			name = Release;
@@ -1309,7 +1326,8 @@
 				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				SDKROOT = macosx10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
@@ -1323,7 +1341,8 @@
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				SDKROOT = macosx10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
