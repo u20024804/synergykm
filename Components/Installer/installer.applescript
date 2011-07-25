@@ -15,6 +15,13 @@
 -- ¥ localisation
 --
 
+--
+-- force the application to quit after the last window closes
+--
+on should quit after last window closed theObject
+    return true
+end should quit after last window closed
+
 -- 
 -- HANDLER
 --
