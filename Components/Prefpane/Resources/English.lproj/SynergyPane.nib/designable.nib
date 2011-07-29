@@ -2,15 +2,39 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10A432</string>
-		<string key="IBDocument.InterfaceBuilderVersion">732</string>
-		<string key="IBDocument.AppKitVersion">1038</string>
-		<string key="IBDocument.HIToolboxVersion">437.00</string>
+		<string key="IBDocument.SystemVersion">11A511</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
+		<string key="IBDocument.AppKitVersion">1138</string>
+		<string key="IBDocument.HIToolboxVersion">566.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">732</string>
+			<string key="NS.object.0">1617</string>
 		</object>
-		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs"/>
+		<array key="IBDocument.IntegratedClassDependencies">
+			<string>NSScroller</string>
+			<string>NSTableHeaderView</string>
+			<string>NSMenu</string>
+			<string>NSMatrix</string>
+			<string>NSButton</string>
+			<string>NSCustomObject</string>
+			<string>NSImageView</string>
+			<string>NSTableView</string>
+			<string>NSImageCell</string>
+			<string>NSCustomView</string>
+			<string>NSTextField</string>
+			<string>NSWindowTemplate</string>
+			<string>NSTextFieldCell</string>
+			<string>NSButtonCell</string>
+			<string>NSTableColumn</string>
+			<string>NSBox</string>
+			<string>NSPopUpButtonCell</string>
+			<string>NSView</string>
+			<string>NSScrollView</string>
+			<string>NSTabViewItem</string>
+			<string>NSPopUpButton</string>
+			<string>NSTabView</string>
+			<string>NSMenuItem</string>
+		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</array>
@@ -35,7 +59,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="61947584">
 					<reference key="NSNextResponder"/>
@@ -46,7 +70,7 @@
 							<int key="NSvFlags">274</int>
 							<string key="NSFrame">{{13, 42}, {569, 389}}</string>
 							<reference key="NSSuperview" ref="61947584"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="977034730"/>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="539107482">
 									<object class="NSMutableString" key="NSIdentifier">
@@ -61,7 +85,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{201, 295}, {146, 32}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="138930359"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="755468977">
 													<int key="NSCellFlags">67239424</int>
@@ -89,7 +113,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{146, 18}, {256, 18}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="98240119"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="490942175">
 													<int key="NSCellFlags">67239424</int>
@@ -113,7 +137,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{257, 90}, {130, 26}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="642903983"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSPopUpButtonCell" key="NSCell" id="883339896">
 													<int key="NSCellFlags">-2076049856</int>
@@ -218,7 +242,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{162, 96}, {93, 17}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="844230890"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="50321237">
 													<int key="NSCellFlags">67239424</int>
@@ -251,7 +275,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{213, 48}, {122, 32}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="209215798"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="838080384">
 													<int key="NSCellFlags">67239424</int>
@@ -276,14 +300,14 @@
 												<array class="NSMutableArray" key="NSSubviews">
 													<object class="NSView" id="95558712">
 														<reference key="NSNextResponder" ref="138930359"/>
-														<int key="NSvFlags">256</int>
+														<int key="NSvFlags">274</int>
 														<array class="NSMutableArray" key="NSSubviews">
 															<object class="NSMatrix" id="904367321">
 																<reference key="NSNextResponder" ref="95558712"/>
 																<int key="NSvFlags">256</int>
 																<string key="NSFrame">{{12, 54}, {294, 91}}</string>
 																<reference key="NSSuperview" ref="95558712"/>
-																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView" ref="458804210"/>
 																<bool key="NSEnabled">YES</bool>
 																<int key="NSNumRows">2</int>
 																<int key="NSNumCols">1</int>
@@ -350,7 +374,7 @@
 																<int key="NSvFlags">256</int>
 																<string key="NSFrame">{{36, 80}, {239, 39}}</string>
 																<reference key="NSSuperview" ref="95558712"/>
-																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView" ref="792090851"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="731774149">
 																	<int key="NSCellFlags">67239424</int>
@@ -374,7 +398,7 @@
 																<int key="NSvFlags">256</int>
 																<string key="NSFrame">{{36, 11}, {239, 42}}</string>
 																<reference key="NSSuperview" ref="95558712"/>
-																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView" ref="1009621534"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="258942165">
 																	<int key="NSCellFlags">67239424</int>
@@ -392,12 +416,12 @@
 														</array>
 														<string key="NSFrame">{{2, 2}, {318, 155}}</string>
 														<reference key="NSSuperview" ref="138930359"/>
-														<reference key="NSWindow"/>
+														<reference key="NSNextKeyView" ref="904367321"/>
 													</object>
 												</array>
 												<string key="NSFrame">{{113, 126}, {322, 159}}</string>
 												<reference key="NSSuperview" ref="977034730"/>
-												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="95558712"/>
 												<string key="NSOffsets">{0, 0}</string>
 												<object class="NSTextFieldCell" key="NSTitleCell">
 													<int key="NSCellFlags">67239424</int>
@@ -428,7 +452,7 @@
 										</array>
 										<string key="NSFrame">{{10, 33}, {549, 343}}</string>
 										<reference key="NSSuperview" ref="831797789"/>
-										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="1017339800"/>
 									</object>
 									<string key="NSLabel">General</string>
 									<reference key="NSColor" ref="1022802297"/>
@@ -830,7 +854,7 @@
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{473, 12}, {108, 32}}</string>
 							<reference key="NSSuperview" ref="61947584"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="298026406">
 								<int key="NSCellFlags">67239424</int>
@@ -854,7 +878,7 @@
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{17, 22}, {47, 17}}</string>
 							<reference key="NSSuperview" ref="61947584"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="997910692"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="135217982">
 								<int key="NSCellFlags">67239424</int>
@@ -871,7 +895,7 @@
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{66, 22}, {408, 17}}</string>
 							<reference key="NSSuperview" ref="61947584"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="998370924"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="514566685">
 								<int key="NSCellFlags">67239424</int>
@@ -889,14 +913,14 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="890327972">
 									<reference key="NSNextResponder" ref="435159970"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSPopUpButton" id="753662836">
 											<reference key="NSNextResponder" ref="890327972"/>
 											<int key="NSvFlags">256</int>
 											<string key="NSFrame">{{74, 3}, {135, 26}}</string>
 											<reference key="NSSuperview" ref="890327972"/>
-											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="117417316"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSPopUpButtonCell" key="NSCell" id="667952959">
 												<int key="NSCellFlags">-2076049856</int>
@@ -967,7 +991,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrame">{{10, 9}, {62, 17}}</string>
 											<reference key="NSSuperview" ref="890327972"/>
-											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="753662836"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="51604721">
 												<int key="NSCellFlags">67239424</int>
@@ -984,7 +1008,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrame">{{211, 7}, {145, 18}}</string>
 											<reference key="NSSuperview" ref="890327972"/>
-											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="831797789"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="996061922">
 												<int key="NSCellFlags">67239424</int>
@@ -1004,12 +1028,12 @@
 									</array>
 									<string key="NSFrameSize">{367, 32}</string>
 									<reference key="NSSuperview" ref="435159970"/>
-									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView" ref="41827470"/>
 								</object>
 							</array>
 							<string key="NSFrame">{{114, 441}, {367, 32}}</string>
 							<reference key="NSSuperview" ref="61947584"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="890327972"/>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
 								<int key="NSCellFlags">67239424</int>
@@ -1031,11 +1055,12 @@
 					</array>
 					<string key="NSFrameSize">{595, 484}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView" ref="435159970"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="553815431">
 				<int key="NSWindowStyleMask">7</int>
@@ -1047,7 +1072,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="778138058">
 					<nil key="NSNextResponder"/>
@@ -1154,9 +1179,10 @@
 					</array>
 					<string key="NSFrame">{{1, 9}, {277, 153}}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="82614404">
 				<int key="NSWindowStyleMask">7</int>
@@ -1168,7 +1194,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="412857410">
 					<nil key="NSNextResponder"/>
@@ -1246,6 +1272,7 @@
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
 											<bool key="NSAllowsTypeSelect">YES</bool>
 											<int key="NSTableViewDraggingDestinationStyle">0</int>
+											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
 									</array>
 									<string key="NSFrame">{{1, 1}, {206, 100}}</string>
@@ -1283,7 +1310,7 @@
 							<string key="NSFrame">{{20, 60}, {208, 102}}</string>
 							<reference key="NSSuperview" ref="412857410"/>
 							<reference key="NSNextKeyView" ref="763407300"/>
-							<int key="NSsFlags">562</int>
+							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="166723753"/>
 							<reference key="NSHScroller" ref="944045574"/>
 							<reference key="NSContentView" ref="763407300"/>
@@ -1398,9 +1425,10 @@
 					</array>
 					<string key="NSFrame">{{1, 9}, {356, 198}}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="644500518">
 				<string key="NSClassName">SPEditLocationController</string>
@@ -1424,7 +1452,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="230088823">
 					<nil key="NSNextResponder"/>
@@ -1565,6 +1593,7 @@
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
 											<bool key="NSAllowsTypeSelect">YES</bool>
 											<int key="NSTableViewDraggingDestinationStyle">0</int>
+											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
 									</array>
 									<string key="NSFrame">{{1, 17}, {231, 97}}</string>
@@ -1611,12 +1640,11 @@
 							<string key="NSFrame">{{20, 60}, {233, 115}}</string>
 							<reference key="NSSuperview" ref="230088823"/>
 							<reference key="NSNextKeyView" ref="977866079"/>
-							<int key="NSsFlags">562</int>
+							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="952417973"/>
 							<reference key="NSHScroller" ref="671342439"/>
 							<reference key="NSContentView" ref="977866079"/>
 							<reference key="NSHeaderClipView" ref="750575231"/>
-							<reference key="NSCornerView" ref="188409020"/>
 							<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 						</object>
 						<object class="NSButton" id="707987826">
@@ -1687,9 +1715,10 @@
 					</array>
 					<string key="NSFrame">{{1, 9}, {375, 246}}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="686511417">
 				<string key="NSClassName">SPAliasesListController</string>
@@ -1704,7 +1733,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="47101413">
 					<nil key="NSNextResponder"/>
@@ -1737,7 +1766,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="289111140">
 									<reference key="NSNextResponder" ref="912201341"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSPopUpButton" id="942866091">
 											<reference key="NSNextResponder" ref="289111140"/>
@@ -2290,7 +2319,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="971647059">
 									<reference key="NSNextResponder" ref="84449463"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSTextField" id="42801126">
 											<reference key="NSNextResponder" ref="971647059"/>
@@ -2436,9 +2465,10 @@
 					</array>
 					<string key="NSFrame">{{1, 9}, {524, 297}}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="586625732">
 				<int key="NSWindowStyleMask">7</int>
@@ -2450,7 +2480,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{213, 107}</string>
 				<object class="NSView" key="NSWindowView" id="30054683">
 					<nil key="NSNextResponder"/>
@@ -2462,7 +2492,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="258477639">
 									<reference key="NSNextResponder" ref="54902022"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSTextField" id="983056738">
 											<reference key="NSNextResponder" ref="258477639"/>
@@ -2715,7 +2745,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="487081011">
 									<reference key="NSNextResponder" ref="105635297"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSTextField" id="55106493">
 											<reference key="NSNextResponder" ref="487081011"/>
@@ -2834,7 +2864,7 @@
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="380052541">
 									<reference key="NSNextResponder" ref="537206172"/>
-									<int key="NSvFlags">256</int>
+									<int key="NSvFlags">274</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSTextField" id="571891687">
 											<reference key="NSNextResponder" ref="380052541"/>
@@ -2972,15 +3002,21 @@
 					</array>
 					<string key="NSFrameSize">{393, 548}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{213, 129}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="389726204">
 				<string key="NSClassName">SPScreenOptionsController</string>
 			</object>
 			<object class="NSCustomObject" id="592926959">
 				<string key="NSClassName">SPServerOptionsController</string>
+			</object>
+			<object class="NSView" id="820052073">
+				<nil key="NSNextResponder"/>
+				<int key="NSvFlags">256</int>
+				<string key="NSFrameSize">{1, 111}</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -5527,19 +5563,8 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">630</int>
 						<reference key="object" ref="440307392"/>
-						<array class="NSMutableArray" key="children">
-							<object class="NSView" id="820052073">
-								<nil key="NSNextResponder"/>
-								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{2, 2}, {1, 111}}</string>
-							</object>
-						</array>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="54902022"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">629</int>
-						<reference key="object" ref="820052073"/>
-						<reference key="parent" ref="440307392"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">743</int>
@@ -5710,112 +5735,66 @@
 						<reference key="object" ref="218022112"/>
 						<reference key="parent" ref="290584154"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">629</int>
+						<reference key="object" ref="820052073"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="-3.ImportedFromIB2"/>
 				<string key="100.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="100.ImportedFromIB2"/>
 				<string key="101.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="101.ImportedFromIB2"/>
 				<string key="102.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="102.ImportedFromIB2"/>
-				<string key="12.IBEditorWindowLastContentRect">{{0, 361}, {595, 484}}</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="12.IBWindowTemplateEditedContentRect">{{0, 361}, {595, 484}}</string>
-				<boolean value="YES" key="12.ImportedFromIB2"/>
-				<boolean value="YES" key="12.windowTemplate.hasMinSize"/>
-				<string key="12.windowTemplate.minSize">{213, 107}</string>
 				<string key="162.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="162.ImportedFromIB2"/>
 				<string key="163.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="163.ImportedFromIB2"/>
 				<string key="164.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="164.ImportedFromIB2"/>
 				<string key="165.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="165.ImportedFromIB2"/>
 				<string key="166.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="166.ImportedFromIB2"/>
 				<string key="167.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="167.ImportedFromIB2"/>
 				<string key="189.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="189.ImportedFromIB2"/>
-				<boolean value="YES" key="189.windowTemplate.hasMinSize"/>
-				<string key="189.windowTemplate.minSize">{213, 107}</string>
 				<string key="190.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="190.ImportedFromIB2"/>
 				<string key="191.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="191.ImportedFromIB2"/>
 				<string key="192.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="192.ImportedFromIB2"/>
 				<string key="194.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="194.ImportedFromIB2"/>
 				<string key="195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="195.ImportedFromIB2"/>
 				<string key="216.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="216.ImportedFromIB2"/>
 				<string key="222.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="222.ImportedFromIB2"/>
 				<string key="223.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="223.ImportedFromIB2"/>
-				<boolean value="YES" key="223.windowTemplate.hasMinSize"/>
-				<string key="223.windowTemplate.minSize">{213, 107}</string>
 				<string key="225.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="225.ImportedFromIB2"/>
 				<string key="226.CustomClassName">SPTableView</string>
 				<string key="226.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="226.ImportedFromIB2"/>
 				<string key="227.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="227.ImportedFromIB2"/>
 				<string key="228.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="228.ImportedFromIB2"/>
 				<string key="229.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="229.ImportedFromIB2"/>
 				<string key="230.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="230.ImportedFromIB2"/>
 				<string key="231.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="231.ImportedFromIB2"/>
 				<string key="232.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="232.ImportedFromIB2"/>
 				<string key="255.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="255.ImportedFromIB2"/>
 				<string key="256.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="256.ImportedFromIB2"/>
 				<string key="257.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="257.ImportedFromIB2"/>
-				<boolean value="YES" key="266.ImportedFromIB2"/>
-				<boolean value="YES" key="267.ImportedFromIB2"/>
+				<string key="266.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="267.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="323.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="323.ImportedFromIB2"/>
 				<string key="326.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="326.ImportedFromIB2"/>
 				<string key="335.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="335.ImportedFromIB2"/>
 				<string key="336.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="336.ImportedFromIB2"/>
 				<string key="337.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="337.ImportedFromIB2"/>
 				<string key="343.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="343.ImportedFromIB2"/>
 				<string key="344.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="344.ImportedFromIB2"/>
 				<string key="414.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="414.ImportedFromIB2"/>
 				<string key="417.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="417.ImportedFromIB2"/>
 				<string key="418.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="418.ImportedFromIB2"/>
 				<string key="419.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="419.ImportedFromIB2"/>
 				<string key="420.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="420.ImportedFromIB2"/>
 				<string key="426.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="426.ImportedFromIB2"/>
 				<string key="431.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="431.ImportedFromIB2"/>
 				<string key="432.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="432.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="433.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -5825,133 +5804,68 @@
 					</object>
 				</object>
 				<string key="433.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="433.ImportedFromIB2"/>
 				<string key="436.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="436.ImportedFromIB2"/>
 				<string key="442.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="442.ImportedFromIB2"/>
-				<boolean value="YES" key="456.ImportedFromIB2"/>
-				<boolean value="YES" key="464.ImportedFromIB2"/>
+				<string key="456.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="464.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="480.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="480.ImportedFromIB2"/>
 				<string key="481.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="481.ImportedFromIB2"/>
-				<boolean value="YES" key="481.windowTemplate.hasMinSize"/>
-				<string key="481.windowTemplate.minSize">{213, 107}</string>
-				<boolean value="YES" key="494.ImportedFromIB2"/>
+				<string key="494.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="495.CustomClassName">SPTableView</string>
 				<string key="495.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="495.ImportedFromIB2"/>
 				<string key="496.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="496.ImportedFromIB2"/>
 				<string key="497.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="497.ImportedFromIB2"/>
 				<string key="498.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="498.ImportedFromIB2"/>
 				<string key="499.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="499.ImportedFromIB2"/>
 				<string key="501.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="501.ImportedFromIB2"/>
 				<string key="504.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="504.ImportedFromIB2"/>
 				<string key="521.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="521.ImportedFromIB2"/>
-				<boolean value="YES" key="521.windowTemplate.hasMinSize"/>
-				<string key="521.windowTemplate.minSize">{213, 107}</string>
 				<string key="522.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="522.ImportedFromIB2"/>
 				<string key="523.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="523.ImportedFromIB2"/>
 				<string key="524.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="524.ImportedFromIB2"/>
 				<string key="525.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="525.ImportedFromIB2"/>
 				<string key="526.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="526.ImportedFromIB2"/>
 				<string key="527.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="527.ImportedFromIB2"/>
 				<string key="528.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="528.ImportedFromIB2"/>
 				<string key="533.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="533.ImportedFromIB2"/>
 				<string key="537.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="537.ImportedFromIB2"/>
 				<string key="546.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="546.ImportedFromIB2"/>
 				<string key="559.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="559.ImportedFromIB2"/>
 				<string key="560.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="560.ImportedFromIB2"/>
 				<string key="561.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="561.ImportedFromIB2"/>
 				<string key="562.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="562.ImportedFromIB2"/>
 				<string key="563.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="563.ImportedFromIB2"/>
 				<string key="564.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="564.ImportedFromIB2"/>
 				<string key="565.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="565.ImportedFromIB2"/>
 				<string key="566.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="566.ImportedFromIB2"/>
 				<string key="567.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="567.ImportedFromIB2"/>
 				<string key="568.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="568.ImportedFromIB2"/>
 				<string key="569.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="569.ImportedFromIB2"/>
 				<string key="570.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="570.ImportedFromIB2"/>
 				<string key="571.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="571.ImportedFromIB2"/>
 				<string key="572.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="572.ImportedFromIB2"/>
 				<string key="573.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="573.ImportedFromIB2"/>
 				<string key="574.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="574.ImportedFromIB2"/>
 				<string key="575.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="575.ImportedFromIB2"/>
 				<string key="576.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="576.ImportedFromIB2"/>
 				<string key="577.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="577.ImportedFromIB2"/>
 				<string key="579.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="579.ImportedFromIB2"/>
 				<string key="580.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="580.ImportedFromIB2"/>
 				<string key="581.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="581.ImportedFromIB2"/>
 				<string key="582.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="582.ImportedFromIB2"/>
 				<string key="583.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="583.ImportedFromIB2"/>
 				<string key="586.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="586.ImportedFromIB2"/>
 				<string key="587.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="587.ImportedFromIB2"/>
-				<boolean value="YES" key="587.windowTemplate.hasMinSize"/>
-				<string key="587.windowTemplate.minSize">{213, 107}</string>
 				<string key="588.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="588.ImportedFromIB2"/>
 				<string key="589.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="589.ImportedFromIB2"/>
 				<string key="591.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="591.ImportedFromIB2"/>
 				<string key="592.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="592.ImportedFromIB2"/>
 				<string key="593.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="593.ImportedFromIB2"/>
 				<string key="594.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="594.ImportedFromIB2"/>
 				<string key="595.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="595.ImportedFromIB2"/>
 				<string key="597.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="597.ImportedFromIB2"/>
 				<string key="598.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="598.ImportedFromIB2"/>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="6.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="615.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -5961,9 +5875,7 @@
 					</object>
 				</object>
 				<string key="615.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="615.ImportedFromIB2"/>
 				<string key="619.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="619.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="623.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -5973,21 +5885,13 @@
 					</object>
 				</object>
 				<string key="623.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="623.ImportedFromIB2"/>
 				<string key="627.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="627.ImportedFromIB2"/>
 				<string key="629.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="629.ImportedFromIB2"/>
 				<string key="630.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="630.ImportedFromIB2"/>
 				<string key="631.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="631.ImportedFromIB2"/>
 				<string key="633.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="633.ImportedFromIB2"/>
 				<string key="634.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="634.ImportedFromIB2"/>
 				<string key="640.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="640.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="641.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -5997,7 +5901,6 @@
 					</object>
 				</object>
 				<string key="641.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="641.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="645.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6007,7 +5910,6 @@
 					</object>
 				</object>
 				<string key="645.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="645.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="648.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6017,9 +5919,7 @@
 					</object>
 				</object>
 				<string key="648.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="648.ImportedFromIB2"/>
 				<string key="649.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="649.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="650.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6029,31 +5929,19 @@
 					</object>
 				</object>
 				<string key="650.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="650.ImportedFromIB2"/>
 				<string key="651.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="651.ImportedFromIB2"/>
 				<string key="657.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="657.ImportedFromIB2"/>
 				<string key="659.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="659.ImportedFromIB2"/>
 				<string key="661.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="661.ImportedFromIB2"/>
-				<boolean value="YES" key="662.ImportedFromIB2"/>
-				<boolean value="YES" key="668.ImportedFromIB2"/>
+				<string key="662.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="668.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="678.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="678.ImportedFromIB2"/>
 				<string key="679.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="679.ImportedFromIB2"/>
 				<string key="683.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="683.ImportedFromIB2"/>
 				<string key="689.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="689.ImportedFromIB2"/>
 				<string key="690.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="690.ImportedFromIB2"/>
 				<string key="691.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="691.ImportedFromIB2"/>
 				<string key="692.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="692.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="693.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6063,23 +5951,14 @@
 					</object>
 				</object>
 				<string key="693.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="693.ImportedFromIB2"/>
 				<string key="695.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="695.ImportedFromIB2"/>
 				<string key="698.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="698.ImportedFromIB2"/>
 				<string key="703.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="703.ImportedFromIB2"/>
 				<string key="704.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="704.ImportedFromIB2"/>
 				<string key="705.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="705.ImportedFromIB2"/>
 				<string key="706.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="706.ImportedFromIB2"/>
 				<string key="707.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="707.ImportedFromIB2"/>
 				<string key="708.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="708.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="711.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6089,25 +5968,15 @@
 					</object>
 				</object>
 				<string key="711.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="711.ImportedFromIB2"/>
 				<string key="712.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="712.ImportedFromIB2"/>
 				<string key="713.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="713.ImportedFromIB2"/>
 				<string key="714.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="714.ImportedFromIB2"/>
 				<string key="715.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="715.ImportedFromIB2"/>
 				<string key="716.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="716.ImportedFromIB2"/>
 				<string key="717.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="717.ImportedFromIB2"/>
 				<string key="718.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="718.ImportedFromIB2"/>
 				<string key="720.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="720.ImportedFromIB2"/>
 				<string key="721.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="721.ImportedFromIB2"/>
 				<object class="NSMutableDictionary" key="729.IBAttributePlaceholdersKey">
 					<string key="NS.key.0">ToolTip</string>
 					<object class="IBToolTipAttribute" key="NS.object.0">
@@ -6117,27 +5986,16 @@
 					</object>
 				</object>
 				<string key="729.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="729.ImportedFromIB2"/>
 				<string key="730.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="730.ImportedFromIB2"/>
 				<string key="732.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="732.ImportedFromIB2"/>
 				<string key="741.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="741.ImportedFromIB2"/>
 				<string key="743.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="743.ImportedFromIB2"/>
 				<string key="744.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="744.ImportedFromIB2"/>
 				<string key="745.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="745.ImportedFromIB2"/>
 				<string key="746.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="746.ImportedFromIB2"/>
 				<string key="747.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="747.ImportedFromIB2"/>
 				<string key="748.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="748.ImportedFromIB2"/>
 				<string key="856.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="856.ImportedFromIB2"/>
 				<string key="859.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="860.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="861.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6238,9 +6096,7 @@
 				<string key="950.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="950.IBShouldRemoveOnLegacySave"/>
 				<string key="98.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="98.ImportedFromIB2"/>
 				<string key="99.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="99.ImportedFromIB2"/>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
@@ -6252,404 +6108,26 @@
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">FirstResponder</string>
-					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">:</string>
 						<string key="NS.object.0">id</string>
 					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="taskDidLaunch:">id</string>
-						<string key="taskWillLaunch:">id</string>
-						<string key="taskWillTerminate:">id</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Common/LCSStdIOTaskWrapper.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Common/SKMServerController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Daemon/Source/SDStatusUpdater.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="438740942">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Widgets/SPScreenView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSPreferencePane</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPAliasesListController</string>
-					<string key="superclassName">SPScreenEntryBaseSheetController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addAlias:">id</string>
-						<string key="deleteAlias:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="addAliasBtn">NSButton</string>
-						<string key="deleteAliasBtn">NSButton</string>
-						<string key="screenNameLabel">NSTextField</string>
-						<string key="tableView">NSTableView</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPAliasesListController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPAliasesListController</string>
-					<string key="superclassName">SPScreenEntryBaseSheetController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPBaseSheetController</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="cancel:">id</string>
-						<string key="ok:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="synergyPane">SynergyPane</string>
-						<string key="window">NSWindow</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPBaseSheetController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPBaseSheetController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPClientTabController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">serverAddressChanged:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="clientPane">NSView</string>
-						<string key="configurationTab">NSTabViewItem</string>
-						<string key="screenNameField">NSTextField</string>
-						<string key="serverAddressField">NSTextField</string>
-						<string key="synergyPane">SynergyPane</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPClientTabController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPClientTabController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPEditLocationController</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="deleteLocation:">id</string>
-						<string key="duplicateLocation:">id</string>
-						<string key="ok:">id</string>
-						<string key="renameLocation:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="deleteBtn">NSButton</string>
-						<string key="duplicateBtn">NSButton</string>
-						<string key="renameBtn">NSButton</string>
-						<string key="synergyPane">SynergyPane</string>
-						<string key="tableView">NSTableView</string>
-						<string key="window">NSWindow</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPEditLocationController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPEditLocationController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPNewLocationController</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="cancel:">id</string>
-						<string key="ok:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="errorField">NSTextField</string>
-						<string key="nameField">NSTextField</string>
-						<string key="synergyPane">SynergyPane</string>
-						<string key="window">NSWindow</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPNewLocationController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPNewLocationController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenEntryBaseSheetController</string>
-					<string key="superclassName">SPBaseSheetController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPScreenEntryBaseSheetController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenEntryBaseSheetController</string>
-					<string key="superclassName">SPBaseSheetController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenOptionsController</string>
-					<string key="superclassName">SPScreenEntryBaseSheetController</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="capsLockBtn">NSButton</string>
-						<string key="commandPopupBtn">NSPopUpButton</string>
-						<string key="controlPopupBtn">NSPopUpButton</string>
-						<string key="numLockBtn">NSButton</string>
-						<string key="optionPopupBtn">NSPopUpButton</string>
-						<string key="screenNameLabel">NSTextField</string>
-						<string key="scrollLockBtn">NSButton</string>
-						<string key="shiftPopupBtn">NSPopUpButton</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPScreenOptionsController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenOptionsController</string>
-					<string key="superclassName">SPScreenEntryBaseSheetController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenView</string>
-					<string key="superclassName">NSView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">datasource</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<reference key="sourceIdentifier" ref="438740942"/>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPScreenView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPServerOptionsController</string>
-					<string key="superclassName">SPBaseSheetController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="enableClientChecksBtnChanged:">id</string>
-						<string key="switchAfterDelayBtnChanged:">id</string>
-						<string key="switchOnDoubleTapBtnChanged:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="enableClientChecksBtn">NSButton</string>
-						<string key="enableClientChecksTextField">NSTextField</string>
-						<string key="port">NSTextField</string>
-						<string key="screenName">NSTextField</string>
-						<string key="switchAfterDelayBtn">NSButton</string>
-						<string key="switchAfterDelayTextField">NSTextField</string>
-						<string key="switchOnDoubleTapBtn">NSButton</string>
-						<string key="switchOnDoubleTapTextField">NSTextField</string>
-						<string key="synchronizeScreenSavers">NSButton</string>
-						<string key="useRelativeMouseMoves">NSButton</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPServerOptionsController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPServerOptionsController</string>
-					<string key="superclassName">SPBaseSheetController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPServerTabController</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="add:">id</string>
-						<string key="aliases:">id</string>
-						<string key="remove:">id</string>
-						<string key="screenOptions:">id</string>
-						<string key="serverOptions:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="aliasListController">SPAliasesListController</string>
-						<string key="aliasesBtn">NSButton</string>
-						<string key="configurationTab">NSTabViewItem</string>
-						<string key="modifiersBtn">NSButton</string>
-						<string key="optionsBtn">NSButton</string>
-						<string key="removeBtn">NSButton</string>
-						<string key="screenNameField">NSTextField</string>
-						<string key="screenNameLabel">NSTextField</string>
-						<string key="screenOptionsController">SPScreenOptionsController</string>
-						<string key="screenView">SPScreenView</string>
-						<string key="serverOptionsController">SPServerOptionsController</string>
-						<string key="serverPane">NSView</string>
-						<string key="synergyPane">SynergyPane</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Controllers/SPServerTabController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPServerTabController</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPTableView</string>
-					<string key="superclassName">NSTableView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/Widgets/SPTableView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SPTableView</string>
-					<string key="superclassName">NSTableView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SynergyPane</string>
-					<string key="superclassName">NSPreferencePane</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="apply:">id</string>
-						<string key="bonjourToggled:">id</string>
-						<string key="configurationTypeToggled:">id</string>
-						<string key="launchAtLoginToggled:">id</string>
-						<string key="locationPopupChanged:">id</string>
-						<string key="loggingLevelPopupChanged:">id</string>
-						<string key="menuVisibilityToggled:">id</string>
-						<string key="openLogFile:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="applyBtn">NSButton</string>
-						<string key="bonjourBtn">NSButton</string>
-						<string key="clientTabController">SPClientTabController</string>
-						<string key="clientVersionInfo">NSTextField</string>
-						<string key="configTypeRadioBtn">NSMatrix</string>
-						<string key="editLocationsController">SPEditLocationController</string>
-						<string key="launchBtn">NSButton</string>
-						<string key="locationPopup">NSPopUpButton</string>
-						<string key="logLevelPopup">NSPopUpButton</string>
-						<string key="menuVisibilityBtn">NSButton</string>
-						<string key="newLocationController">SPNewLocationController</string>
-						<string key="serverTabController">SPServerTabController</string>
-						<string key="serverVersionInfo">NSTextField</string>
-						<string key="synergyStatus">NSTextField</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Components/Prefpane/SynergyPane.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SynergyPane</string>
-					<string key="superclassName">NSPreferencePane</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBUserSource</string>
-						<string key="minorKey"/>
-					</object>
-				</object>
-			</array>
-			<array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">
-				<object class="IBPartialClassDescription">
-					<string key="className">NSPreferencePane</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="_firstKeyView">NSView</string>
-						<string key="_initialKeyView">NSView</string>
-						<string key="_lastKeyView">NSView</string>
-						<string key="_window">NSWindow</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">PreferencePanes.framework/Headers/NSPreferencePane.h</string>
 					</object>
 				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1050" key="NS.object.0"/>
@@ -6659,7 +6137,11 @@
 			<integer value="1050" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../../../../SynergyKM.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NSMenuCheckmark">{9, 8}</string>
+			<string key="NSMenuMixedState">{7, 2}</string>
+			<string key="Synergy">{512, 512}</string>
+		</dictionary>
 	</data>
 </archive>
