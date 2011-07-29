@@ -40,8 +40,7 @@
 {
 	// debug
 	// [[NSExceptionHandler defaultExceptionHandler] setExceptionHandlingMask: 1023];
-	
-	
+
 	// redirect stdout and stderr
 	NSString*	logFilePath = [SDLogfilePath stringByStandardizingPath];
 	freopen([logFilePath cStringUsingEncoding:[NSString defaultCStringEncoding]], "a", stdout);
@@ -50,6 +49,7 @@
 	// create config
 	config = [[SDConfigurationManager alloc] init];
 	if(!config) {
+		NSLog(@"No configuration manager initialized!", nil);
 		// FIXME: ERROR HANDLING
 		return;
 	}
@@ -57,7 +57,6 @@
 
 	// install SDSynergydShouldTerminateNotification notification handler
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:[NSApplication sharedApplication] selector:@selector(terminate:) name:SDSynergydShouldTerminateNotification object:nil];
-	
 }
 
 - (void) applicationWillTerminate:(NSNotification *)aNotification
