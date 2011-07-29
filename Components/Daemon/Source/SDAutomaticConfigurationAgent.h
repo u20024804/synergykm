@@ -38,7 +38,7 @@
 
 #import "SDConfigurationAgent.h"
 
-@interface SDAutomaticConfigurationAgent : SDConfigurationAgent {
+@interface SDAutomaticConfigurationAgent : SDConfigurationAgent <NSNetServiceDelegate, NSNetServiceBrowserDelegate> {
 	NSNetService*			server;
 	NSNetServiceBrowser*	browser;
 	NSMutableSet*			services;

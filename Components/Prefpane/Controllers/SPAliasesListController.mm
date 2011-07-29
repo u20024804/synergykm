@@ -81,9 +81,9 @@
 //        [aliases sortUsingDescriptors: [tableView sortDescriptors]];
 //    }
     
-    int index = [aliases indexOfObject: name];
+    NSUInteger index = [aliases indexOfObject:name];
     [tableView reloadData];
-    [tableView selectRow:  index byExtendingSelection: NO];
+    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: index] byExtendingSelection: NO];
 
     [[tableView window] makeFirstResponder: tableView];
     [tableView editColumn: 0 row: index withEvent: nil select: YES];
@@ -136,8 +136,8 @@
 //        [aliases sortUsingDescriptors: [tableView sortDescriptors]];
 //    }
     [tableView reloadData];
-    int row = [aliases indexOfObject: anObject];
-    [tableView selectRow: row byExtendingSelection: NO];
+    NSUInteger row = [aliases indexOfObject: anObject];
+    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: row] byExtendingSelection: NO];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -152,7 +152,7 @@
 
 - (void)tableView:(NSTableView *)aTableView sortDescriptorsDidChange:(NSArray *)oldDescriptors
 {
-    int row = [tableView selectedRow];
+    NSUInteger row = [tableView selectedRow];
     id object = [aliases objectAtIndex: row];
     
 //    if ([aliases respondsToSelector: @selector(sortUsingDescriptors:)])
@@ -163,7 +163,7 @@
     [tableView reloadData];
 
     row = [aliases indexOfObject: object];
-    [tableView selectRow: row byExtendingSelection: NO];
+    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: row] byExtendingSelection: NO];
 }
 
 @end

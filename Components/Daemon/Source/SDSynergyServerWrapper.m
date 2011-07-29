@@ -32,6 +32,7 @@
 #import "SDSynergyServerWrapper.h"
 #import "LCSStdIOTaskWrapper.h"
 #import "SDStatusUpdater.h"
+#import "SDUtilities.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 
 NSDictionary*	SDServerStatusMessageDict;
@@ -178,7 +179,7 @@ NSDictionary*	SDServerStatusMessageDict;
 	if(configFilePath) {
 		NSFileManager*	fm = [NSFileManager defaultManager];
 		if([fm isDeletableFileAtPath:configFilePath]) {
-			[fm removeFileAtPath:configFilePath handler:NULL];
+			[fm removeItemAtPath:configFilePath error:nil];
 		}
 		[configFilePath release];
 		configFilePath = nil;

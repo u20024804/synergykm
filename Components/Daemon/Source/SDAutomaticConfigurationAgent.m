@@ -30,6 +30,7 @@
 //USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <arpa/inet.h>
 
 #import "SDAutomaticConfigurationAgent.h"
 #import "SDSynergyWrapper.h"
@@ -77,7 +78,7 @@
 			serverName = (NSString*) SCDynamicStoreCopyLocalHostName(NULL);
 		}
 		
-		if(server = [[NSNetService alloc] initWithDomain:@"" type:SDSynergyDiscoverService name:serverName port:kSynergyDefaultPort])
+		if((server = [[NSNetService alloc] initWithDomain:@"" type:SDSynergyDiscoverService name:serverName port:kSynergyDefaultPort]))
 		{
 			[server setDelegate:self];
 			[server publish];
@@ -85,7 +86,7 @@
 		[serverName release];
 		
 		// setup bonjour browser
-		if(browser = [[NSNetServiceBrowser alloc] init]) {
+		if((browser = [[NSNetServiceBrowser alloc] init])) {
 			[browser setDelegate:self];
 			[browser searchForServicesOfType:SDSynergyDiscoverService inDomain:@""];
 		}
@@ -158,7 +159,7 @@
 		NSMutableSet*	availablePeerNames = [NSMutableSet set];
 		id				searchField;
 		NSDictionary*	c = [configs objectForKey:configSetName];
-		if(searchField = [c objectForKey:SDConfServerConfigKey]) {
+		if((searchField = [c objectForKey:SDConfServerConfigKey])) {
 			// search for peer names in screen sections (server config)
 			NSDictionary*	screens = [searchField objectForKey:@"screens"];
 			[availablePeerNames addObjectsFromArray:[screens allKeys]];
@@ -176,7 +177,7 @@
 			}
 		}
 		// search for peer name in ServerAddress field (client config)
-		else if(searchField = [c objectForKey:SDConfAddressKey]) {
+		else if((searchField = [c objectForKey:SDConfAddressKey])) {
 			[availablePeerNames addObject:searchField];
 		}
 		
@@ -277,7 +278,7 @@
 	[peers setObject:[NSMutableArray array] forKey:[aNetService name]];
 	[aNetService setDelegate:self];
 		
-	[aNetService resolve];
+	[aNetService resolveWithTimeout:(NSTimeInterval)5];
 	return;
 }
 
