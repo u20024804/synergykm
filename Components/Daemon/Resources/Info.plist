@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Synergy</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.sourceforge.synergy2.synergyd</string>
+	<string>net.sourceforge.synergykm.synergyd</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -18,6 +18,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0b7</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSUIElement</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>

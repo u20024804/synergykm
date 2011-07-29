@@ -45,7 +45,7 @@ NSString* const SMOpenPrefPaneScript = \
 	@"tell application \"System Preferences\"\n\
 		activate\n\
 		set visible of preferences window to true\n\
-		set current pane to pane \"net.sourceforge.synergy2.synergypane\"\n\
+		set current pane to pane \"net.sourceforge.synergykm.prefpane\"\n\
 	end tell";
 
 @interface SMStatusMenuExtra (private)

@@ -9,6 +9,7 @@
 
 build/
 xcuserdata
+DerivedData/
 
 # old skool
 .svn

@@ -35,7 +35,7 @@
 NSString* const kSynergyDaemonAppName = @"Synergyd";
 NSString* const kServerCommand = @"synergys";
 NSString* const kClientCommand = @"synergyc";
-NSString* const SDBundleIdentifier = @"net.sourceforge.synergy2.synergyd";
+NSString* const SDBundleIdentifier = @"net.sourceforge.synergykm.synergyd";
 NSString* const SDLogfilePath = @"~/Library/Logs/synergyd.log";
 
 /*

@@ -86,9 +86,8 @@
 
 -(void)syncSelection
 {
-    unsigned int index = [[self configEntries] indexOfObject: selectedConfig];
-
-    [tableView selectRow: index byExtendingSelection: NO];
+    NSUInteger index = [[self configEntries] indexOfObject: selectedConfig];
+    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: index] byExtendingSelection: NO];
 }
 
 #pragma mark - NSTableView Delegate & DataSource -

@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Synergy</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.sourceforge.synergy2.synergyinstaller</string>
+	<string>net.sourceforge.synergykm.synergyinstaller</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

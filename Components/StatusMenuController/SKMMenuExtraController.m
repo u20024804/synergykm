@@ -43,7 +43,7 @@
 #define kMenuCrackerBundleID	@"net.sourceforge.menucracker"
 
 #define kSKMMenuURL				[NSURL fileURLWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"SynergyKM" ofType:@"menu"]]
-#define kSKMMenuBundleID		@"net.sourceforge.synergy2.synergykmmenu"
+#define kSKMMenuBundleID		@"net.sourceforge.synergykm.menu"
 
 @interface SKMMenuExtraController (private)
 + (BOOL)isExtraLoaded:(NSString *)extraID;
