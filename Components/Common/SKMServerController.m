@@ -134,8 +134,9 @@ SKMServerController	*sharedInstance = nil;
 		[self requestConfigurationReload];
 	}
 	else {
-		NSString * synergydPath = [self pathToServer];
+		NSString *synergydPath = [self pathToServer];
 		if(!synergydPath) {
+			NSLog(@"Can't find Synergyd path!", nil);
 			// FIXME. LOGGING?
 		}
 	
@@ -144,6 +145,7 @@ SKMServerController	*sharedInstance = nil;
 		ProcessSerialNumber me = {0, kCurrentProcess};
 		SetFrontProcess(&me);
 		if(!res) {
+			NSLog(@"Failed launching Synergyd", nil);
 			// FIXME. LOGGING?
 		}
 	}
@@ -152,7 +154,7 @@ SKMServerController	*sharedInstance = nil;
 - (void) stop
 {
 	[self setLaunchAtLogin:NO];
-	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:SDSynergydShouldTerminateNotification object:nil];
+	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:SDSynergydShouldTerminateNotification object:nil userInfo:nil options:NSNotificationDeliverImmediately];
 }
 
 - (void) toggle
@@ -301,7 +303,7 @@ SKMServerController	*sharedInstance = nil;
 
 	id item;
 	// get last object, remove it from the queue and process it using updateStatus
-	while(item = [delayedStatusUpdates lastObject]) {
+	while ((item = [delayedStatusUpdates lastObject])) {
 		[item retain];
 		[delayedStatusUpdates removeObject:item];
 		[self updateStatus:item];
