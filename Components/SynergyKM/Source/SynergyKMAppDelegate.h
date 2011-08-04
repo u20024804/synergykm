@@ -32,10 +32,12 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
+#import "SKMSettingsWindowController.h"
+
 @interface SynergyKMAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
     IBOutlet NSMenu *menu;
     NSStatusItem *status;
+    SKMSettingsWindowController *settingsWindowController;
     
     IBOutlet NSMenuItem *statusMenuItem;
     IBOutlet NSMenuItem *activateMenuItem;
@@ -44,7 +46,7 @@
     IBOutlet NSMenuItem *quitMenuItem;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property (retain) SKMSettingsWindowController *settingsWindowController;
 
 -(IBAction)configureSynergy:(id)sender;
 -(IBAction)toggleSynergyActivation:(id)sender;

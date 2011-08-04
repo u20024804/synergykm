@@ -33,7 +33,7 @@
 
 @implementation SynergyKMAppDelegate
 
-@synthesize window;
+@synthesize settingsWindowController;
 
 #define SKImageByName(name)(\
 [[[NSImage alloc] \
@@ -49,6 +49,7 @@
 
 - (void)awakeFromNib
 {
+    NSLog(@"SynergyKMAppDelegate awakeFromNib called");
     status = [[[NSStatusBar systemStatusBar]
                statusItemWithLength:NSVariableStatusItemLength] retain];
     [status setMenu:menu];
@@ -70,10 +71,15 @@
 
 - (IBAction)configureSynergy:(id)sender
 {
+    if (settingsWindowController == nil) {
+        settingsWindowController = [[SKMSettingsWindowController alloc]
+                                    initWithWindowNibName:@"Settings"];
+    }
     
+    [[settingsWindowController window] makeKeyAndOrderFront:nil];
 }
 
--(void)reloadConfiguration:(id)sender
+- (void)reloadConfiguration:(id)sender
 {
     
 }
