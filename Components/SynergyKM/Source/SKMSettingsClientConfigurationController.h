@@ -20,4 +20,6 @@
 @property (retain) IBOutlet NSTextField *serverAddressField;
 @property (retain) IBOutlet NSTextField *clientNameLabel;
 
+- (void)updateMachineName;
+
 @end

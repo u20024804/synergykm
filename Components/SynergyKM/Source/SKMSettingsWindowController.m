@@ -12,7 +12,6 @@
 
 - (void)windowDidLoad
 {
-    NSLog(@"SKMSettingsWindowController windowDidLoad - %@", [self window]);
     [[self window] orderFront:nil];
 }
 

@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SKMSettingsWindowController : NSWindowController {
-    
-}
+@interface SKMSettingsWindowController : NSWindowController
 
 @end

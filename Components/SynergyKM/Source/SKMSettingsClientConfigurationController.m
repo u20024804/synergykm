@@ -19,8 +19,11 @@
 
 - (void)awakeFromNib
 {
-    NSLog(@"SKMSettingsClientConfigurationController awakeFromNib called");
-    
+    [self updateMachineName];
+}
+
+- (void)updateMachineName
+{
     NSString *machineName = nil;
     machineName = (NSString *)SCDynamicStoreCopyLocalHostName(NULL);
     if (machineName != nil) {
