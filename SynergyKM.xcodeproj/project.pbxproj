@@ -155,6 +155,8 @@
 		D47349FC13E85A2700582E59 /* StatusWarning.tif in Resources */ = {isa = PBXBuildFile; fileRef = CA3C3B1C087D34D3007161A1 /* StatusWarning.tif */; };
 		D489E6FA13EAE861004B63E5 /* SKMSettingsClientConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */; };
 		D489E6FC13EAE8D4004B63E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D489E6FB13EAE8D3004B63E5 /* SystemConfiguration.framework */; };
+		D489E6FF13EB3E50004B63E5 /* minus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = D489E6FD13EB3E50004B63E5 /* minus-8.png */; };
+		D489E70013EB3E50004B63E5 /* plus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = D489E6FE13EB3E50004B63E5 /* plus-8.png */; };
 		D4A6A56B13E9A71000424EF1 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45CEAC713E9A01A001A1EFB /* Settings.xib */; };
 /* End PBXBuildFile section */
 
@@ -385,6 +387,8 @@
 		D489E6F813EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKMSettingsClientConfigurationController.h; path = Components/SynergyKM/Source/SKMSettingsClientConfigurationController.h; sourceTree = "<group>"; };
 		D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKMSettingsClientConfigurationController.m; path = Components/SynergyKM/Source/SKMSettingsClientConfigurationController.m; sourceTree = "<group>"; };
 		D489E6FB13EAE8D3004B63E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D489E6FD13EB3E50004B63E5 /* minus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minus-8.png"; path = "Resources/minus-8.png"; sourceTree = "<group>"; };
+		D489E6FE13EB3E50004B63E5 /* plus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-8.png"; path = "Resources/plus-8.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -748,6 +752,8 @@
 		D473499113E84E9100582E59 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D489E6FD13EB3E50004B63E5 /* minus-8.png */,
+				D489E6FE13EB3E50004B63E5 /* plus-8.png */,
 				D412C68B13E85BD60015ED7E /* InfoPlist.strings */,
 				D412C68D13E85BE60015ED7E /* Info.plist */,
 				D45CEAC613E861C3001A1EFB /* Menu.xib */,
@@ -997,6 +1003,8 @@
 				D47349FC13E85A2700582E59 /* StatusWarning.tif in Resources */,
 				D45CEAC413E861C3001A1EFB /* Menu.xib in Resources */,
 				D4A6A56B13E9A71000424EF1 /* Settings.xib in Resources */,
+				D489E6FF13EB3E50004B63E5 /* minus-8.png in Resources */,
+				D489E70013EB3E50004B63E5 /* plus-8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
