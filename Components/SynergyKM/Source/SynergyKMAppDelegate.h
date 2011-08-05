@@ -36,7 +36,7 @@
 
 @interface SynergyKMAppDelegate : NSObject <NSApplicationDelegate> {
     IBOutlet NSMenu *menu;
-    NSStatusItem *status;
+    NSStatusItem *statusBar;
     SKMSettingsWindowController *settingsWindowController;
     
     IBOutlet NSMenuItem *statusMenuItem;

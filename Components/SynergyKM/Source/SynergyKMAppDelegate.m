@@ -49,13 +49,12 @@
 
 - (void)awakeFromNib
 {
-    NSLog(@"SynergyKMAppDelegate awakeFromNib called");
-    status = [[[NSStatusBar systemStatusBar]
+    statusBar = [[[NSStatusBar systemStatusBar]
                statusItemWithLength:NSVariableStatusItemLength] retain];
-    [status setMenu:menu];
-    [status setTitle:@""];
-    [status setHighlightMode:YES];
-    [status setImage:SKImageByName(@"StatusIdle")];
+    [statusBar setMenu:menu];
+    [statusBar setTitle:@""];
+    [statusBar setHighlightMode:YES];
+    [statusBar setImage:SKImageByName(@"StatusIdle")];
 }
 
 - (IBAction)toggleSynergyActivation:(id)sender
