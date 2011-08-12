@@ -30,7 +30,6 @@
 //  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
-#import <Foundation/Foundation.h>
 
 #import "SKMSettingsWindowController.h"
 
@@ -44,11 +43,19 @@
     IBOutlet NSMenuItem *deactivateMenuItem;
     IBOutlet NSMenuItem *configureMenuItem;
     IBOutlet NSMenuItem *quitMenuItem;
+    
+    NSRunningApplication *activeApp;
+    NSRunningApplication *lastDeactivatedApp;
 }
 
 @property (retain) SKMSettingsWindowController *settingsWindowController;
+@property (retain) NSRunningApplication *activeApp;
+@property (retain) NSRunningApplication *lastDeactivatedApp;
 
--(IBAction)configureSynergy:(id)sender;
--(IBAction)toggleSynergyActivation:(id)sender;
+- (IBAction)configureSynergy:(id)sender;
+- (IBAction)toggleSynergyActivation:(id)sender;
+
+- (void)trackApplicationActivation:(NSNotification *)activateNote;
+- (void)trackApplicationDeactivation:(NSNotification *)deactivateNote;
 
 @end

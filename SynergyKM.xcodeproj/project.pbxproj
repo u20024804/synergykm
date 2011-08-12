@@ -37,6 +37,7 @@
 /* Begin PBXBuildFile section */
 		4C80E0EC089617E800E14B0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6C73A6083B98830006D65C /* SystemConfiguration.framework */; };
 		A16A6E0013DD139000D3A5E4 /* MenuCracker.menu in CopyFiles */ = {isa = PBXBuildFile; fileRef = A16A6DF713DD11C800D3A5E4 /* MenuCracker.menu */; };
+		A16A6E1313EF018000D3A5E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6C73A6083B98830006D65C /* SystemConfiguration.framework */; };
 		C40DF9000E244EA400450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
 		C40DF9010E244EA400450B52 /* SynergyPref.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FF0E244EA400450B52 /* SynergyPref.png */; };
 		C40DF9040E244EA800450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
@@ -154,7 +155,6 @@
 		D47349FB13E85A2700582E59 /* StatusWarning_P.tif in Resources */ = {isa = PBXBuildFile; fileRef = CA3C3B1B087D34D3007161A1 /* StatusWarning_P.tif */; };
 		D47349FC13E85A2700582E59 /* StatusWarning.tif in Resources */ = {isa = PBXBuildFile; fileRef = CA3C3B1C087D34D3007161A1 /* StatusWarning.tif */; };
 		D489E6FA13EAE861004B63E5 /* SKMSettingsClientConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */; };
-		D489E6FC13EAE8D4004B63E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D489E6FB13EAE8D3004B63E5 /* SystemConfiguration.framework */; };
 		D489E6FF13EB3E50004B63E5 /* minus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = D489E6FD13EB3E50004B63E5 /* minus-8.png */; };
 		D489E70013EB3E50004B63E5 /* plus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = D489E6FE13EB3E50004B63E5 /* plus-8.png */; };
 		D4A6A56B13E9A71000424EF1 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45CEAC713E9A01A001A1EFB /* Settings.xib */; };
@@ -248,6 +248,7 @@
 
 /* Begin PBXFileReference section */
 		A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MenuCracker.xcodeproj; path = Components/menucracker/MenuCracker.xcodeproj; sourceTree = "<group>"; };
+		A16A6E1413F228B900D3A5E4 /* SKMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKMCommon.h; path = Components/SynergyKM/Source/SKMCommon.h; sourceTree = "<group>"; };
 		C40DF8FE0E244EA400450B52 /* SynergyScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyScreen.png; sourceTree = "<group>"; };
 		C40DF8FF0E244EA400450B52 /* SynergyPref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyPref.png; sourceTree = "<group>"; };
 		C40DF9410E24582100450B52 /* Synergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synergy.png; sourceTree = "<group>"; };
@@ -386,7 +387,6 @@
 		D47349A113E8524D00582E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D489E6F813EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKMSettingsClientConfigurationController.h; path = Components/SynergyKM/Source/SKMSettingsClientConfigurationController.h; sourceTree = "<group>"; };
 		D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKMSettingsClientConfigurationController.m; path = Components/SynergyKM/Source/SKMSettingsClientConfigurationController.m; sourceTree = "<group>"; };
-		D489E6FB13EAE8D3004B63E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D489E6FD13EB3E50004B63E5 /* minus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minus-8.png"; path = "Resources/minus-8.png"; sourceTree = "<group>"; };
 		D489E6FE13EB3E50004B63E5 /* plus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-8.png"; path = "Resources/plus-8.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,8 +424,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D489E6FC13EAE8D4004B63E5 /* SystemConfiguration.framework in Frameworks */,
 				D473499D13E8524D00582E59 /* Cocoa.framework in Frameworks */,
+				A16A6E1313EF018000D3A5E4 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +468,6 @@
 		CA6C72E7083B926D0006D65C = {
 			isa = PBXGroup;
 			children = (
-				D489E6FB13EAE8D3004B63E5 /* SystemConfiguration.framework */,
 				D473498F13E84E7500582E59 /* SynergyKM */,
 				A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */,
 				C466FA441006618A00DEB597 /* synergyc */,
@@ -745,6 +744,7 @@
 				D45CEACA13E9A0BE001A1EFB /* SKMSettingsWindowController.m */,
 				D489E6F813EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.h */,
 				D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */,
+				A16A6E1413F228B900D3A5E4 /* SKMCommon.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";

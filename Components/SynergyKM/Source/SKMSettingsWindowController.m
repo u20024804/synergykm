@@ -7,6 +7,7 @@
 //
 
 #import "SKMSettingsWindowController.h"
+#import "SKMCommon.h"
 
 @implementation SKMSettingsWindowController
 
@@ -25,15 +26,12 @@
         selectedLocationItem = [locationMenu selectedItem];
     }
 
+    /* we want to know when our window closes so we can notify our app */
     [[NSNotificationCenter defaultCenter]
-     addObserverForName:NSWindowWillCloseNotification
-                 object:self.window
-                  queue:nil
-             usingBlock:^(NSNotification *note) { [NSApp deactivate]; }];
-    
-    [NSApp activateIgnoringOtherApps:YES];
-    [self.window makeKeyAndOrderFront:nil];
-    NSLog(@"SKMSettingsWindowController windowDidLoad");
+     addObserver:self
+     selector:@selector(processWindowCloseEvent:)
+     name:NSWindowWillCloseNotification
+     object:self.window];
 }
 
 - (IBAction)saveSettings:(id)sender
@@ -54,7 +52,6 @@
 
 - (IBAction)editLocations:(id)sender
 {
-    NSLog(@"SKMSettingsWindowController editLocations: called");
     [NSApp beginSheet:editLocationsPanel
        modalForWindow:self.window
         modalDelegate:nil
@@ -67,10 +64,17 @@
 
 - (IBAction)finishEditingLocations:(id)sender
 {
-    NSLog(@"SKMSettingsWindowController finishEditingLocations: called");
     [locationMenu selectItem:selectedLocationItem];
     [NSApp stopModal];
     
+}
+
+- (void)processWindowCloseEvent:(NSNotification *)windowClosingNotification
+{
+    /* we're closing, notify ourselves that our window is closing */
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SKMLastWindowClosedNotification
+     object:self];
 }
 
 @end
