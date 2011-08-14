@@ -31,4 +31,10 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+    #define MARK(number) \
+        NSLog(@"%@(%p) %@.%d",[self className], \
+              self, \
+              NSStringFromSelector(_cmd), \
+              number);
 #endif
