@@ -99,6 +99,7 @@
     [statusBar setTitle:@""];
     [statusBar setHighlightMode:YES];
     [statusBar setImage:SKImageByName(@"StatusIdle")];
+    [statusBar setAlternateImage:SKImageByName(@"StatusIdle_P")];
 
     /* listen for applications activating and deactivating
      * we can then reactivate applications that are deactivated when
