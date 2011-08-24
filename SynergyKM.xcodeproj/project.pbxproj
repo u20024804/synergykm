@@ -248,8 +248,8 @@
 /* Begin PBXFileReference section */
 		A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MenuCracker.xcodeproj; path = Components/menucracker/MenuCracker.xcodeproj; sourceTree = "<group>"; };
 		A16A6E1413F228B900D3A5E4 /* SKMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKMCommon.h; path = Components/SynergyKM/Source/SKMCommon.h; sourceTree = "<group>"; };
-		A1767965140176BB0021ABEE /* SKMConfigEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMConfigEntry.h; sourceTree = "<group>"; };
-		A1767966140176BB0021ABEE /* SKMConfigEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMConfigEntry.m; sourceTree = "<group>"; };
+		A1767965140176BB0021ABEE /* SKMConfigEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components/SynergyKM/Source/SKMConfigEntry.h; sourceTree = "<group>"; };
+		A1767966140176BB0021ABEE /* SKMConfigEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components/SynergyKM/Source/SKMConfigEntry.m; sourceTree = "<group>"; };
 		C40DF8FE0E244EA400450B52 /* SynergyScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyScreen.png; sourceTree = "<group>"; };
 		C40DF8FF0E244EA400450B52 /* SynergyPref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyPref.png; sourceTree = "<group>"; };
 		C40DF9410E24582100450B52 /* Synergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synergy.png; sourceTree = "<group>"; };
