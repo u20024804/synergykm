@@ -38,7 +38,7 @@
 		4C80E0EC089617E800E14B0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6C73A6083B98830006D65C /* SystemConfiguration.framework */; };
 		A16A6E0013DD139000D3A5E4 /* MenuCracker.menu in CopyFiles */ = {isa = PBXBuildFile; fileRef = A16A6DF713DD11C800D3A5E4 /* MenuCracker.menu */; };
 		A16A6E1313EF018000D3A5E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6C73A6083B98830006D65C /* SystemConfiguration.framework */; };
-		A1767967140176BC0021ABEE /* SKMConfigEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767966140176BB0021ABEE /* SKMConfigEntry.m */; };
+		A1767967140176BC0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767966140176BB0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.m */; };
 		C40DF9000E244EA400450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
 		C40DF9010E244EA400450B52 /* SynergyPref.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FF0E244EA400450B52 /* SynergyPref.png */; };
 		C40DF9040E244EA800450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
@@ -248,8 +248,8 @@
 /* Begin PBXFileReference section */
 		A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MenuCracker.xcodeproj; path = Components/menucracker/MenuCracker.xcodeproj; sourceTree = "<group>"; };
 		A16A6E1413F228B900D3A5E4 /* SKMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKMCommon.h; path = Components/SynergyKM/Source/SKMCommon.h; sourceTree = "<group>"; };
-		A1767965140176BB0021ABEE /* SKMConfigEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components/SynergyKM/Source/SKMConfigEntry.h; sourceTree = "<group>"; };
-		A1767966140176BB0021ABEE /* SKMConfigEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components/SynergyKM/Source/SKMConfigEntry.m; sourceTree = "<group>"; };
+		A1767965140176BB0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Components/SynergyKM/Source/SKMConfigEntry.h; sourceTree = "<group>"; };
+		A1767966140176BB0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Components/SynergyKM/Source/SKMConfigEntry.m; sourceTree = "<group>"; };
 		C40DF8FE0E244EA400450B52 /* SynergyScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyScreen.png; sourceTree = "<group>"; };
 		C40DF8FF0E244EA400450B52 /* SynergyPref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyPref.png; sourceTree = "<group>"; };
 		C40DF9410E24582100450B52 /* Synergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synergy.png; sourceTree = "<group>"; };
@@ -744,8 +744,8 @@
 				D489E6F813EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.h */,
 				D489E6F913EAE0E7004B63E5 /* SKMSettingsClientConfigurationController.m */,
 				A16A6E1413F228B900D3A5E4 /* SKMCommon.h */,
-				A1767965140176BB0021ABEE /* SKMConfigEntry.h */,
-				A1767966140176BB0021ABEE /* SKMConfigEntry.m */,
+				A1767965140176BB0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.h */,
+				A1767966140176BB0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -1092,7 +1092,7 @@
 				D45CEACB13E9A124001A1EFB /* SKMSettingsWindowController.m in Sources */,
 				D47349BA13E853BF00582E59 /* SynergyKMAppDelegate.m in Sources */,
 				D47349BB13E853BF00582E59 /* SynergyKM.m in Sources */,
-				A1767967140176BC0021ABEE /* SKMConfigEntry.m in Sources */,
+				A1767967140176BC0021ABEE /* Components/SynergyKM/Source/SKMConfigEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
