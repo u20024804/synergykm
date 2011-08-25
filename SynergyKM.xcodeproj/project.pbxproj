@@ -35,7 +35,7 @@
 
 /* Begin PBXBuildFile section */
 		4C80E0EC089617E800E14B0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6C73A6083B98830006D65C /* SystemConfiguration.framework */; };
-		A16A6E0013DD139000D3A5E4 /* MenuCracker.menu in CopyFiles */ = {isa = PBXBuildFile; fileRef = A16A6DF713DD11C800D3A5E4 /* MenuCracker.menu */; };
+		A1815E571405E7F500F673EB /* MenuCracker.menu in Resources */ = {isa = PBXBuildFile; fileRef = A1815E561405E7F500F673EB /* MenuCracker.menu */; };
 		C40DF9000E244EA400450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
 		C40DF9010E244EA400450B52 /* SynergyPref.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FF0E244EA400450B52 /* SynergyPref.png */; };
 		C40DF9040E244EA800450B52 /* SynergyScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40DF8FE0E244EA400450B52 /* SynergyScreen.png */; };
@@ -125,34 +125,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A16A6DF613DD11C800D3A5E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C53094B0908F88E009B01FF;
-			remoteInfo = MenuCracker;
-		};
-		A16A6DF813DD11C800D3A5E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C5309560908F88E009B01FF;
-			remoteInfo = OpenUp;
-		};
-		A16A6DFA13DD11C800D3A5E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C5309630908F88E009B01FF;
-			remoteInfo = version;
-		};
-		A16A6DFC13DD133400D3A5E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C53093A0908F88E009B01FF;
-			remoteInfo = MenuCracker;
-		};
 		A1D0A5EB13DCA1E80006C1D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA6C72EB083B926D0006D65C /* Project object */;
@@ -190,21 +162,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		A16A6DFF13DD137E00D3A5E4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				A16A6E0013DD139000D3A5E4 /* MenuCracker.menu in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MenuCracker.xcodeproj; path = Components/menucracker/MenuCracker.xcodeproj; sourceTree = "<group>"; };
+		A1815E561405E7F500F673EB /* MenuCracker.menu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MenuCracker.menu; sourceTree = "<group>"; };
 		C40DF8FE0E244EA400450B52 /* SynergyScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyScreen.png; sourceTree = "<group>"; };
 		C40DF8FF0E244EA400450B52 /* SynergyPref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SynergyPref.png; sourceTree = "<group>"; };
 		C40DF9410E24582100450B52 /* Synergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synergy.png; sourceTree = "<group>"; };
@@ -362,16 +321,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A16A6DF013DD11C700D3A5E4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A16A6DF713DD11C800D3A5E4 /* MenuCracker.menu */,
-				A16A6DF913DD11C800D3A5E4 /* openUp */,
-				A16A6DFB13DD11C800D3A5E4 /* version */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CA059176089C30B300A3901F /* Installer */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +347,6 @@
 		CA6C72E7083B926D0006D65C = {
 			isa = PBXGroup;
 			children = (
-				A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */,
 				C466FA441006618A00DEB597 /* synergyc */,
 				C466FA451006618A00DEB597 /* synergys */,
 				CA6C736A083B96A60006D65C /* Documentation */,
@@ -517,6 +465,7 @@
 		CA6C732F083B969C0006D65C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1815E561405E7F500F673EB /* MenuCracker.menu */,
 				CA6C7416083B9C1D0006D65C /* InfoPlist.strings */,
 				CA6C741A083B9C230006D65C /* SynergyPane.nib */,
 				CA6C7334083B969C0006D65C /* Info.plist */,
@@ -693,7 +642,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA3CDB6E087AF15F00A4B356 /* Build configuration list for PBXNativeTarget "Prefpane" */;
 			buildPhases = (
-				A16A6DFF13DD137E00D3A5E4 /* CopyFiles */,
 				CA6C73EA083B9AE60006D65C /* Resources */,
 				CA6C73EB083B9AE60006D65C /* Sources */,
 				CA6C73EC083B9AE60006D65C /* Frameworks */,
@@ -701,7 +649,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A16A6DFD13DD133400D3A5E4 /* PBXTargetDependency */,
 				A1D0A5EE13DCA1EF0006C1D6 /* PBXTargetDependency */,
 				A1D0A5EC13DCA1E80006C1D6 /* PBXTargetDependency */,
 			);
@@ -728,12 +675,6 @@
 			mainGroup = CA6C72E7083B926D0006D65C;
 			productRefGroup = CA6C7373083B96D50006D65C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A16A6DF013DD11C700D3A5E4 /* Products */;
-					ProjectRef = A16A6DEF13DD11C700D3A5E4 /* MenuCracker.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CA6C745B083B9D8B0006D65C /* All */,
@@ -744,30 +685,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A16A6DF713DD11C800D3A5E4 /* MenuCracker.menu */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MenuCracker.menu;
-			remoteRef = A16A6DF613DD11C800D3A5E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A16A6DF913DD11C800D3A5E4 /* openUp */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = openUp;
-			remoteRef = A16A6DF813DD11C800D3A5E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A16A6DFB13DD11C800D3A5E4 /* version */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = version;
-			remoteRef = A16A6DFA13DD11C800D3A5E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CA5B4F07083DF8D00071F3C7 /* Resources */ = {
@@ -821,6 +738,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1815E571405E7F500F673EB /* MenuCracker.menu in Resources */,
 				C4ECDFFA105368A7003D2908 /* Synergy.icns in Resources */,
 				C40DF9040E244EA800450B52 /* SynergyScreen.png in Resources */,
 				C40DF9050E244EA800450B52 /* SynergyPref.png in Resources */,
@@ -914,11 +832,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A16A6DFD13DD133400D3A5E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MenuCracker;
-			targetProxy = A16A6DFC13DD133400D3A5E4 /* PBXContainerItemProxy */;
-		};
 		A1D0A5EC13DCA1E80006C1D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA6C7371083B96D50006D65C /* Daemon */;
