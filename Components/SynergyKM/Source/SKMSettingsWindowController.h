@@ -31,12 +31,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SKMConfigListController.h"
+
 @interface SKMSettingsWindowController : NSWindowController
 <NSTableViewDataSource, NSTableViewDelegate> {
     NSPanel *editLocationsPanel;
     NSView *editLocationsView;
     NSPopUpButton *locationMenu;
-    NSArrayController *configListController;
+    SKMConfigListController *configListController;
     NSTableView *configListTable;
     NSButton *addLocationButton;
     NSButton *removeLocationButton;
@@ -45,7 +47,7 @@
 @property (retain) IBOutlet NSPanel *editLocationsPanel;
 @property (retain) IBOutlet NSView *editLocationsView;
 @property (retain) IBOutlet NSPopUpButton *locationMenu;
-@property (retain) IBOutlet NSArrayController *configListController;
+@property (retain) IBOutlet SKMConfigListController *configListController;
 @property (retain) IBOutlet NSTableView *configListTable;
 @property (retain) IBOutlet NSButton *addLocationButton;
 @property (retain) IBOutlet NSButton *removeLocationButton;

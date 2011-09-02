@@ -77,50 +77,13 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 
 - (IBAction)addLocation:(id)sender
 {
-    NSString *newLabel = NSLocalizedString(@"New Location", nil);
-    NSUInteger nextNewLocationId = 0;
-    NSUInteger i = 0;
-    SKMConfigEntry *newLocation = [[SKMConfigEntry alloc] init];
+    if (![editLocationsPanel makeFirstResponder:sender])
+        return;
     
-    [editLocationsPanel makeFirstResponder:sender];
-
-    /* match /^New Location(?: [1-9][0-9]*)?$/ to find all current entries
-     * that might conflict with the New Location we're about to create */
-    NSPredicate *match = [NSPredicate 
-                          predicateWithFormat:@"SELF.name MATCHES %@",
-                          [NSString
-                           stringWithFormat:@"^%@(?: [1-9][0-9]*)?$",
-                           newLabel]];
-    NSArray *newLocations = [configList filteredArrayUsingPredicate:match];
-
-    if ([newLocations count] > 0) {
-        for (i = 0; i < [newLocations count]; i++) {
-            SKMConfigEntry *configEntry =
-                (SKMConfigEntry *)[newLocations objectAtIndex:i];
-            
-            if ([configEntry.name length] > [newLabel length]) {
-                NSInteger locationId =
-                    [[configEntry.name
-                      substringFromIndex:([newLabel length] + 1)]
-                     integerValue];
-                if (locationId > nextNewLocationId) {
-                    nextNewLocationId = locationId;
-                }
-            }
-        }
-        
-        nextNewLocationId++;
-    }
-    
-    if (nextNewLocationId > 0) {
-        newLabel = [NSString
-                    stringWithFormat:@"%@ %ld",
-                    newLabel, nextNewLocationId];
-    }
-    
-    newLocation.name = newLabel;
-    
+    SKMConfigEntry *newLocation =
+        (SKMConfigEntry *)[configListController newObject];
     [configListController addObject:newLocation];
+    [newLocation release];
     
     [removeLocationButton setEnabled:YES];
     
@@ -137,7 +100,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 
 - (IBAction)removeLocation:(id)sender
 {
-    [editLocationsPanel makeFirstResponder:sender];
+    if (![editLocationsPanel makeFirstResponder:sender])
+        return;
 
     NSUInteger rows = [configListTable numberOfRows];
     if (rows <= 1)
@@ -168,6 +132,12 @@ NSInteger compareViews(id firstView, id secondView, void *context);
      forKeyPath:@"firstResponder"
      options:NSKeyValueObservingOptionOld
      context:nil];
+    
+    [configListController
+     addObserver:self
+     forKeyPath:@"arrangedObjects"
+     options:NSKeyValueObservingOptionNew
+     context:nil];
 
     if ([configList count] > 1) {
         [removeLocationButton setEnabled:YES];
@@ -185,29 +155,33 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 - (IBAction)finishEditingLocations:(id)sender
 {
     /* this ensures that any in-progress cell edits are completed */
-    [editLocationsPanel makeFirstResponder:sender];
-    
-    NSUInteger selectedEntryIndex = [configListController selectionIndex];
+    if ([editLocationsPanel makeFirstResponder:sender]) {
+        NSUInteger selectedEntryIndex = [configListController selectionIndex];
 
-    /* when our panel disappears, the location Menu is going to have
-     * "Edit Locations" selected; try to set it to something reasonable */
-    if (selectedEntryIndex != NSNotFound) {
-        [locationMenu selectItemAtIndex:selectedEntryIndex];
-    } else {
-        [locationMenu selectItemWithTitle:selectedLocationTitle];
+        /* when our panel disappears, the location Menu is going to have
+         * "Edit Locations" selected; try to set it to something reasonable */
+        if (selectedEntryIndex != NSNotFound) {
+            [locationMenu selectItemAtIndex:selectedEntryIndex];
+        } else {
+            [locationMenu selectItemWithTitle:selectedLocationTitle];
+        }
+    
+        /* if all else fails, set it to the first item */
+        if ([locationMenu selectedItem] == nil)
+            [locationMenu selectItemAtIndex:0];
+    
+        [NSApp endSheet:editLocationsPanel];
     }
     
-    /* if all else fails, set it to the first item */
-    if ([locationMenu selectedItem] == nil)
-        [locationMenu selectItemAtIndex:0];
-    
-    [NSApp endSheet:editLocationsPanel];
+    /* if we get here, it means we couldn't take over firstResponder status,
+     * which probably means they have an invalid location specified */
 }
 
 - (IBAction)closeEditingLocations:(NSWindow *)sheet
                        returnCode:(NSInteger)rc
                       contextInfo:(void *)contextInfo
 {
+    [configListController removeObserver:self forKeyPath:@"arrangedObjects"];
     [editLocationsPanel removeObserver:self forKeyPath:@"firstResponder"];
     [sheet orderOut:self];
 }
@@ -215,12 +189,12 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 - (void)awakeFromNib {
     if (configList == nil) {
         configList = [[NSMutableArray alloc] init];
-        
-        SKMConfigEntry *entry = [[SKMConfigEntry alloc] init];
-        entry.name = @"Default";
-        [configList addObject:entry];
-        
         [configListController setContent:configList];
+        
+        SKMConfigEntry *entry = (SKMConfigEntry *)[configListController newObject];
+        entry.name = NSLocalizedString(@"Default", nil);
+        [configListController addObject:entry];
+        [entry release];
     }
     
     [super awakeFromNib];
@@ -255,7 +229,28 @@ NSInteger compareViews(id firstView, id secondView, void *context);
      object:self];
 }
 
-/* we implrement this observation for firstResponder so that we can
+- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
+{
+    if (control == configListTable) {
+        NSString *value = [fieldEditor string];
+        if ([value isEqualToString:@""]) {
+            return NO;
+        }
+        
+        NSIndexSet *indexes = [configList indexesOfObjectsPassingTest:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([value isEqualToString:((SKMConfigEntry *)obj).name])
+                return YES;
+            return NO;
+        }];
+
+        if ([indexes count] > 0)
+            return NO;
+    }
+        
+    return YES;
+}
+
+/* we implement this observation for firstResponder so that we can
  * bring any buttons to the front, preventing their highlighting
  * from being truncated by other UI elements
  *
@@ -269,6 +264,12 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         [editLocationsView
          sortSubviewsUsingFunction:compareViews
          context:nil];
+    } else if ([keyPath isEqualToString:@"arrangedObjects"]) {
+        if ([configList count] > 1) {
+            [removeLocationButton setEnabled:YES];
+        } else {
+            [removeLocationButton setEnabled:NO];
+        }
     }
 }
 
