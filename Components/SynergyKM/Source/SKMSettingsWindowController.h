@@ -52,7 +52,6 @@
 @property (retain) IBOutlet NSButton *addLocationButton;
 @property (retain) IBOutlet NSButton *removeLocationButton;
 
-- (IBAction)saveSettings:(id)sender;
 - (IBAction)changeLocation:(id)sender;
 - (IBAction)addLocation:(id)sender;
 - (IBAction)removeLocation:(id)sender;

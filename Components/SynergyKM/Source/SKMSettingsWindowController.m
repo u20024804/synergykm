@@ -57,12 +57,50 @@
 NSInteger compareViews(id firstView, id secondView, void *context);
 
 
-#pragma Interface actions
-
-- (IBAction)saveSettings:(id)sender
+- (void)_loadSettings
 {
-    // TODO: implement
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUInteger selectedConfigIndex = 0;
+    
+    NSArray *configArray = nil;
+    NSData *encodedConfigList = [defaults objectForKey:@"config.list"];
+    if (encodedConfigList != nil)
+        configArray = [NSKeyedUnarchiver unarchiveObjectWithData:encodedConfigList];
+    
+    if (configArray == nil || [configArray count] == 0) {
+        SKMConfigEntry *config = [[SKMConfigEntry alloc] init];
+        config.name = NSLocalizedString(@"Default", nil);
+        
+        configList = [NSMutableArray arrayWithCapacity:1];
+        [configList addObject:config];
+        
+        [config release];
+        
+    } else {
+        configList = [NSMutableArray arrayWithCapacity:[configArray count]];
+        [configList addObjectsFromArray:configArray];
+        selectedConfigIndex = [defaults integerForKey:@"config.active"];
+        if (selectedConfigIndex >= [configList count])
+            selectedConfigIndex = 0;
+    }
+    
+    [configListController setContent:configList];
+    [configListController setSelectionIndex:selectedConfigIndex];
 }
+
+- (void)_saveSettings
+{
+    NSData *encodedConfigList =
+        [NSKeyedArchiver archivedDataWithRootObject:configList];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedConfigList forKey:@"config.list"];
+    [defaults setInteger:[configListController selectionIndex]
+                  forKey:@"config.active"];
+    [defaults synchronize];
+}
+
+#pragma Interface actions
 
 - (IBAction)changeLocation:(id)sender
 {
@@ -89,11 +127,11 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     
     [configListTable
      selectRowIndexes:[NSIndexSet
-                       indexSetWithIndex:([configList count] - 1)]
+                       indexSetWithIndex:([[configListController content] count] - 1)]
      byExtendingSelection:NO];
     [configListTable
      editColumn:0
-     row:([configList count] - 1)
+     row:([[configListController content] count] - 1)
      withEvent:nil
      select:YES];
 }
@@ -139,7 +177,7 @@ NSInteger compareViews(id firstView, id secondView, void *context);
      options:NSKeyValueObservingOptionNew
      context:nil];
 
-    if ([configList count] > 1) {
+    if ([[configListController content] count] > 1) {
         [removeLocationButton setEnabled:YES];
     } else {
         [removeLocationButton setEnabled:NO];
@@ -186,18 +224,9 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     [sheet orderOut:self];
 }
 
-- (void)awakeFromNib {
-    if (configList == nil) {
-        configList = [[NSMutableArray alloc] init];
-        [configListController setContent:configList];
-        
-        SKMConfigEntry *entry = (SKMConfigEntry *)[configListController newObject];
-        entry.name = NSLocalizedString(@"Default", nil);
-        [configListController addObject:entry];
-        [entry release];
-    }
-    
-    [super awakeFromNib];
+- (void)awakeFromNib
+{
+    [self _loadSettings];
 }
 
 - (void)windowDidLoad
@@ -223,6 +252,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 
 - (void)processWindowCloseEvent:(NSNotification *)windowClosingNotification
 {
+    [self _saveSettings];
+    
     /* we're closing, notify ourselves that our window is closing */
     [[NSNotificationCenter defaultCenter]
      postNotificationName:SKMLastWindowClosedNotification
@@ -237,11 +268,13 @@ NSInteger compareViews(id firstView, id secondView, void *context);
             return NO;
         }
         
-        NSIndexSet *indexes = [configList indexesOfObjectsPassingTest:^(id obj, NSUInteger idx, BOOL *stop) {
-            if ([value isEqualToString:((SKMConfigEntry *)obj).name])
-                return YES;
-            return NO;
-        }];
+        NSIndexSet *indexes =
+            [[configListController content]
+             indexesOfObjectsPassingTest:^(id obj, NSUInteger idx, BOOL *stop) {
+                 if ([value isEqualToString:((SKMConfigEntry *)obj).name])
+                     return YES;
+                 return NO;
+             }];
 
         if ([indexes count] > 0)
             return NO;
@@ -265,7 +298,7 @@ NSInteger compareViews(id firstView, id secondView, void *context);
          sortSubviewsUsingFunction:compareViews
          context:nil];
     } else if ([keyPath isEqualToString:@"arrangedObjects"]) {
-        if ([configList count] > 1) {
+        if ([[configListController content] count] > 1) {
             [removeLocationButton setEnabled:YES];
         } else {
             [removeLocationButton setEnabled:NO];

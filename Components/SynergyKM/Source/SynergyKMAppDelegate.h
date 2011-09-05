@@ -43,7 +43,7 @@
     IBOutlet NSMenuItem *deactivateMenuItem;
     IBOutlet NSMenuItem *configureMenuItem;
     IBOutlet NSMenuItem *quitMenuItem;
-    
+
     NSRunningApplication *activeApp;
     NSRunningApplication *lastDeactivatedApp;
 }

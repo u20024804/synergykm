@@ -34,7 +34,10 @@
 enum {
     SKMSwitchLockTypeNone = 0,
     SKMSwitchLockTypeDelay = 1,
-    SKMSwitchLockTypeDoubleClick = 2
+    SKMSwitchLockTypeDoubleClick = 2,
+    
+    SKMSwitchLockTypeMin = SKMSwitchLockTypeNone,
+    SKMSwitchLockTypeMax = SKMSwitchLockTypeDoubleClick
 };
 
 enum {
@@ -42,7 +45,10 @@ enum {
     SKMLogLevelInfo = 1,
     SKMLogLevelDebug = 2,
     SKMLogLevelDebug1 = 3,
-    SKMLogLevelDebug2 = 4
+    SKMLogLevelDebug2 = 4,
+    
+    SKMLogLevelMin = SKMLogLevelNote,
+    SKMLogLevelMax = SKMLogLevelDebug2
 };
 
 @interface SKMConfigEntry : NSObject

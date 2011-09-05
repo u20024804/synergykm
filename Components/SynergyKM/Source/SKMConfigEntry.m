@@ -31,6 +31,9 @@
 
 #import "SKMConfigEntry.h"
 
+#define DEFAULT_HEARTBEAT_MILLISECONDS 250
+#define DEFAULT_SWITCHLOCK_MILLISECONDS 250
+
 @implementation SKMConfigEntry
 
 @synthesize name;
@@ -55,7 +58,7 @@
 - (id)init
 {
     self = [super init];
-    if (self) {
+    if (self != nil) {
         self.name = [NSString new];
         
         self.isServerConfig = NO;
@@ -69,14 +72,69 @@
         self.synchronizeScreenSaver = NO;
         self.relativeMouseMoves = NO;
         
-        self.heartbeatMilliSeconds = 250;
+        self.heartbeatMilliSeconds = DEFAULT_HEARTBEAT_MILLISECONDS;
         self.switchLockType = SKMSwitchLockTypeNone;
-        self.switchLockMilliSeconds = 250;
+        self.switchLockMilliSeconds = DEFAULT_SWITCHLOCK_MILLISECONDS;
         
         self.logLevel = SKMLogLevelNote;
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self != nil) {
+        self.name = [decoder decodeObjectForKey:@"name"];
+        
+        self.isServerConfig = [decoder decodeBoolForKey:@"isServerConfig"];
+        
+        self.address = [decoder decodeObjectForKey:@"address"];
+        
+        self.screenName = [decoder decodeObjectForKey:@"screenName"];
+        self.screenPort = [decoder decodeIntegerForKey:@"screenPort"];
+        
+        self.enableHeartbeat = [decoder decodeBoolForKey:@"enableHeartbeat"];
+        self.synchronizeScreenSaver = [decoder decodeBoolForKey:@"synchronizeScreenSaver"];
+        self.relativeMouseMoves = [decoder decodeBoolForKey:@"relativeMouseMoves"];
+        
+        self.heartbeatMilliSeconds = [decoder decodeIntegerForKey:@"heartbeatMilliSeconds"];
+        self.switchLockType = [decoder decodeIntegerForKey:@"switchLockType"];
+        self.switchLockMilliSeconds = [decoder decodeIntegerForKey:@"switchLockMilliSeconds"];
+        
+        self.logLevel = [decoder decodeIntegerForKey:@"logLevel"];
+        
+        if (self.switchLockType < SKMSwitchLockTypeMin ||
+            self.switchLockType > SKMSwitchLockTypeMax)
+            self.switchLockType = SKMSwitchLockTypeNone;
+        if (self.logLevel < SKMLogLevelMin || self.logLevel > SKMLogLevelMax)
+            self.logLevel = SKMLogLevelNote;
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.name forKey:@"name"];
+    
+    [encoder encodeBool:self.isServerConfig forKey:@"isServerConfig"];
+
+    [encoder encodeObject:self.address forKey:@"address"];
+
+    [encoder encodeObject:self.screenName forKey:@"screenName"];
+    [encoder encodeInteger:self.screenPort forKey:@"screenPort"];
+
+    [encoder encodeBool:self.enableHeartbeat forKey:@"enableHeartbeat"];
+    [encoder encodeBool:self.synchronizeScreenSaver forKey:@"synchronizeScreenSaver"];
+    [encoder encodeBool:self.relativeMouseMoves forKey:@"relativeMouseMoves"];
+
+    [encoder encodeInteger:self.heartbeatMilliSeconds forKey:@"heartbeatMilliSeconds"];
+    [encoder encodeInteger:self.switchLockType forKey:@"switchLockType"];
+    [encoder encodeInteger:self.switchLockMilliSeconds forKey:@"switchLockMilliSeconds"];
+
+    [encoder encodeInteger:self.logLevel forKey:@"logLevel"];
 }
 
 @end

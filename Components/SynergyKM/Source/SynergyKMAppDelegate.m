@@ -83,13 +83,16 @@
      removeObserver:self
      name:NSWorkspaceDidDeactivateApplicationNotification
      object:nil];
-    
+
     lastDeactivatedApp = nil;
     activeApp = nil;
 }
 
 - (void)awakeFromNib
 {
+    settingsWindowController = [[SKMSettingsWindowController alloc]
+                                initWithWindowNibName:@"Settings"];
+
     /* our statusbar item and menu
      * icon-only (no title), highlights on selection,
      * starts with the idle image */
@@ -138,12 +141,6 @@
 
 - (IBAction)configureSynergy:(id)sender
 {
-    /* if the window controller hasn't been loaded yet, load it now */
-    if (settingsWindowController == nil) {
-        settingsWindowController = [[SKMSettingsWindowController alloc]
-                                    initWithWindowNibName:@"Settings"];
-    }
-    
     /* bring the window to the front first as it makes tracking the
      * activation/deactivation steps easier */
     [[settingsWindowController window] makeKeyAndOrderFront:nil];
