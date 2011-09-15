@@ -41,11 +41,14 @@
 @end
 
 @implementation SKMSettingsWindowController
+@synthesize locationMenu;
+@synthesize clientConfigButton;
+@synthesize serverConfigButton;
+
+@synthesize configListController;
 
 @synthesize editLocationsPanel;
 @synthesize editLocationsView;
-@synthesize locationMenu;
-@synthesize configListController;
 @synthesize configListTable;
 @synthesize addLocationButton;
 @synthesize removeLocationButton;
@@ -100,19 +103,66 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     [defaults synchronize];
 }
 
-#pragma Interface actions
-
-- (IBAction)changeLocation:(id)sender
+- (void)_setViewState
 {
-    NSMenuItem *selectedItem = [locationMenu selectedItem];
-    if (selectedItem != nil &&
-        ![selectedItem isSeparatorItem] &&
-        ![[selectedItem title]
-          isEqualToString:NSLocalizedString(@"Edit Locations", nil)]) {
-            selectedLocationTitle = [selectedItem title];
-        }
+    SKMConfigEntry *config = [configListController selectedConfig];
+    
+    if (config != nil) {
+        [clientConfigButton setState:NSOffState];
+        [serverConfigButton setState:NSOnState];
+    } else {
+        [serverConfigButton setState:NSOffState];
+        [clientConfigButton setState:NSOnState];
+    }
 }
 
+#pragma Interface actions
+
+- (IBAction)editLocations:(id)sender
+{
+    /* because we have a +/- button bar where the buttons overlap,
+     * we add this observer to allow us to always bring the firstResponder
+     * button forward, so its highlight won't be truncated by other buttons */
+    [editLocationsPanel
+     addObserver:self
+     forKeyPath:@"firstResponder"
+     options:NSKeyValueObservingOptionOld
+     context:nil];
+    
+    [configListController
+     addObserver:self
+     forKeyPath:@"arrangedObjects"
+     options:NSKeyValueObservingOptionNew
+     context:nil];
+    
+    if ([[configListController content] count] > 1) {
+        [removeLocationButton setEnabled:YES];
+    } else {
+        [removeLocationButton setEnabled:NO];
+    }
+    
+    [NSApp beginSheet:editLocationsPanel
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(closeEditingLocations:returnCode:contextInfo:)
+          contextInfo:nil];
+}
+
+- (IBAction)changeConfigType:(id)sender
+{
+    SKMConfigEntry *config = [configListController selectedConfig];
+    
+    if (sender == clientConfigButton) {
+        [serverConfigButton setState:NSOffState];
+        if (config != nil)
+            config.isServerConfig = FALSE;
+    } else {
+        [clientConfigButton setState:NSOffState];
+        if (config != nil)
+            config.isServerConfig = TRUE;
+    }
+}
+        
 - (IBAction)addLocation:(id)sender
 {
     if (![editLocationsPanel makeFirstResponder:sender])
@@ -160,34 +210,15 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         [removeLocationButton setEnabled:NO];
 }
 
-- (IBAction)editLocations:(id)sender
+- (IBAction)changeLocation:(id)sender
 {
-    /* because we have a +/- button bar where the buttons overlap,
-     * we add this observer to allow us to always bring the firstResponder
-     * button forward, so its highlight won't be truncated by other buttons */
-    [editLocationsPanel
-     addObserver:self
-     forKeyPath:@"firstResponder"
-     options:NSKeyValueObservingOptionOld
-     context:nil];
-    
-    [configListController
-     addObserver:self
-     forKeyPath:@"arrangedObjects"
-     options:NSKeyValueObservingOptionNew
-     context:nil];
-
-    if ([[configListController content] count] > 1) {
-        [removeLocationButton setEnabled:YES];
-    } else {
-        [removeLocationButton setEnabled:NO];
-    }
-    
-    [NSApp beginSheet:editLocationsPanel
-       modalForWindow:self.window
-        modalDelegate:self
-       didEndSelector:@selector(closeEditingLocations:returnCode:contextInfo:)
-          contextInfo:nil];
+    NSMenuItem *selectedItem = [locationMenu selectedItem];
+    if (selectedItem != nil &&
+        ![selectedItem isSeparatorItem] &&
+        ![[selectedItem title]
+          isEqualToString:NSLocalizedString(@"Edit Locations", nil)]) {
+            selectedLocationTitle = [selectedItem title];
+        }
 }
 
 - (IBAction)finishEditingLocations:(id)sender
@@ -227,6 +258,7 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 - (void)awakeFromNib
 {
     [self _loadSettings];
+    [self _setViewState];
 }
 
 - (void)windowDidLoad

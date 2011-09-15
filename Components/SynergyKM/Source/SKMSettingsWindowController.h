@@ -35,27 +35,37 @@
 
 @interface SKMSettingsWindowController : NSWindowController
 <NSTableViewDataSource, NSTableViewDelegate> {
+    NSPopUpButton *locationMenu;
+    NSButton *clientConfigButton;
+    NSButton *serverConfigButton;
+    
+    SKMConfigListController *configListController;
+
     NSPanel *editLocationsPanel;
     NSView *editLocationsView;
-    NSPopUpButton *locationMenu;
-    SKMConfigListController *configListController;
     NSTableView *configListTable;
     NSButton *addLocationButton;
     NSButton *removeLocationButton;
 }
 
+@property (retain) IBOutlet NSPopUpButton *locationMenu;
+@property (retain) IBOutlet NSButton *clientConfigButton;
+@property (retain) IBOutlet NSButton *serverConfigButton;
+
+@property (retain) IBOutlet SKMConfigListController *configListController;
+
 @property (retain) IBOutlet NSPanel *editLocationsPanel;
 @property (retain) IBOutlet NSView *editLocationsView;
-@property (retain) IBOutlet NSPopUpButton *locationMenu;
-@property (retain) IBOutlet SKMConfigListController *configListController;
 @property (retain) IBOutlet NSTableView *configListTable;
 @property (retain) IBOutlet NSButton *addLocationButton;
 @property (retain) IBOutlet NSButton *removeLocationButton;
 
-- (IBAction)changeLocation:(id)sender;
+- (IBAction)editLocations:(id)sender;
+- (IBAction)changeConfigType:(id)sender;
+
 - (IBAction)addLocation:(id)sender;
 - (IBAction)removeLocation:(id)sender;
-- (IBAction)editLocations:(id)sender;
+- (IBAction)changeLocation:(id)sender;
 - (IBAction)finishEditingLocations:(id)sender;
 - (IBAction)closeEditingLocations:(NSWindow *)sheet
                        returnCode:(NSInteger)rc
