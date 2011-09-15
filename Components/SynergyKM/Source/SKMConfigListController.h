@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SKMConfigEntry.h"
 
-@interface SKMConfigListController : NSArrayController
+@interface SKMConfigListController : NSArrayController { }
+
+- (SKMConfigEntry *)selectedConfig;
 
 @end

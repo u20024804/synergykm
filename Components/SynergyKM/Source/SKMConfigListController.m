@@ -7,9 +7,14 @@
 //
 
 #import "SKMConfigListController.h"
-#import "SKMConfigEntry.h"
 
 @implementation SKMConfigListController
+
+// TODO: Should this return the object or a copy of the object?
+- (SKMConfigEntry *)selectedConfig {
+    NSUInteger selectedIndex = [self selectionIndex];
+    return (SKMConfigEntry *)[[self content] objectAtIndex:selectedIndex];
+}
 
 - (id)newObject {
     SKMConfigEntry *entry = (SKMConfigEntry *)[super newObject];
