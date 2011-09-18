@@ -42,8 +42,6 @@
 
 @implementation SKMSettingsWindowController
 @synthesize locationMenu;
-@synthesize clientConfigButton;
-@synthesize serverConfigButton;
 
 @synthesize configListController;
 @synthesize clientController;
@@ -104,18 +102,6 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     [defaults synchronize];
 }
 
-- (void)_setViewState
-{
-    SKMConfigEntry *config = [configListController selectedConfig];
-    
-    if (config != nil && config.isServerConfig) {
-        [clientConfigButton setState:NSOffState];
-        [serverConfigButton setState:NSOnState];
-    } else {
-        [serverConfigButton setState:NSOffState];
-        [clientConfigButton setState:NSOnState];
-    }
-}
 
 #pragma Interface actions
 
@@ -147,21 +133,6 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         modalDelegate:self
        didEndSelector:@selector(closeEditingLocations:returnCode:contextInfo:)
           contextInfo:nil];
-}
-
-- (IBAction)changeConfigType:(id)sender
-{
-    SKMConfigEntry *config = [configListController selectedConfig];
-    
-    if (sender == clientConfigButton) {
-        [serverConfigButton setState:NSOffState];
-        if (config != nil)
-            config.isServerConfig = FALSE;
-    } else {
-        [clientConfigButton setState:NSOffState];
-        if (config != nil)
-            config.isServerConfig = TRUE;
-    }
 }
         
 - (IBAction)addLocation:(id)sender
@@ -259,7 +230,6 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 - (void)awakeFromNib
 {
     [self _loadSettings];
-    [self _setViewState];
 }
 
 - (void)windowDidLoad

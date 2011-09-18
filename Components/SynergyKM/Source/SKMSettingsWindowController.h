@@ -37,8 +37,6 @@
 @interface SKMSettingsWindowController : NSWindowController
 <NSTableViewDataSource, NSTableViewDelegate> {
     NSPopUpButton *locationMenu;
-    NSButton *clientConfigButton;
-    NSButton *serverConfigButton;
     
     SKMConfigListController *configListController;
     SKMSettingsClientConfigurationController *clientController;
@@ -51,8 +49,6 @@
 }
 
 @property (retain) IBOutlet NSPopUpButton *locationMenu;
-@property (retain) IBOutlet NSButton *clientConfigButton;
-@property (retain) IBOutlet NSButton *serverConfigButton;
 
 @property (retain) IBOutlet SKMConfigListController *configListController;
 @property (retain) IBOutlet
@@ -65,7 +61,6 @@
 @property (retain) IBOutlet NSButton *removeLocationButton;
 
 - (IBAction)editLocations:(id)sender;
-- (IBAction)changeConfigType:(id)sender;
 
 - (IBAction)addLocation:(id)sender;
 - (IBAction)removeLocation:(id)sender;
