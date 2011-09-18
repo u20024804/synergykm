@@ -46,6 +46,7 @@
 @synthesize serverConfigButton;
 
 @synthesize configListController;
+@synthesize clientController;
 
 @synthesize editLocationsPanel;
 @synthesize editLocationsView;
@@ -107,7 +108,7 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 {
     SKMConfigEntry *config = [configListController selectedConfig];
     
-    if (config != nil) {
+    if (config != nil && config.isServerConfig) {
         [clientConfigButton setState:NSOffState];
         [serverConfigButton setState:NSOnState];
     } else {

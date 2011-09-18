@@ -32,6 +32,7 @@
 #import <Foundation/Foundation.h>
 
 #import "SKMConfigListController.h"
+#import "SKMSettingsClientConfigurationController.h"
 
 @interface SKMSettingsWindowController : NSWindowController
 <NSTableViewDataSource, NSTableViewDelegate> {
@@ -40,6 +41,7 @@
     NSButton *serverConfigButton;
     
     SKMConfigListController *configListController;
+    SKMSettingsClientConfigurationController *clientController;
 
     NSPanel *editLocationsPanel;
     NSView *editLocationsView;
@@ -53,6 +55,8 @@
 @property (retain) IBOutlet NSButton *serverConfigButton;
 
 @property (retain) IBOutlet SKMConfigListController *configListController;
+@property (retain) IBOutlet
+    SKMSettingsClientConfigurationController *clientController;
 
 @property (retain) IBOutlet NSPanel *editLocationsPanel;
 @property (retain) IBOutlet NSView *editLocationsView;

@@ -31,17 +31,23 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "SKMConfigListController.h"
+
 @interface SKMSettingsClientConfigurationController : NSObject {
     NSView *clientView;
     NSTabViewItem *configurationTab;
     NSTextField *serverAddressField;
     NSTextField *clientNameLabel;
+    
+    SKMConfigListController *configListController;
 }
 
 @property (retain) IBOutlet NSView *clientView;
 @property (retain) IBOutlet NSTabViewItem *configurationTab;
 @property (retain) IBOutlet NSTextField *serverAddressField;
 @property (retain) IBOutlet NSTextField *clientNameLabel;
+
+@property (retain) IBOutlet SKMConfigListController *configListController;
 
 - (void)updateMachineName;
 

@@ -40,9 +40,39 @@
 @synthesize serverAddressField;
 @synthesize clientNameLabel;
 
+@synthesize configListController;
+
+- (void)_setViewState
+{    
+    SKMConfigEntry *config = [configListController selectedConfig];
+    if (config != nil) {
+        [clientView setHidden:config.isServerConfig];
+    } else {
+        [clientView setHidden:FALSE];
+    }
+}
+
 - (void)awakeFromNib
 {
+    [configListController
+     addObserver:self
+     forKeyPath:@"selectionIndex"
+     options:0
+     context:nil];
+    
+    [configListController
+     addObserver:self
+     forKeyPath:@"arrangedObjects.isServerConfig"
+     options:0
+     context:nil];
+    
+    [self _setViewState];
     [self updateMachineName];
+}
+
+- (void)updateConfiguration
+{
+    [self _setViewState];
 }
 
 - (void)updateMachineName
@@ -55,6 +85,14 @@
         [clientNameLabel setStringValue:NSLocalizedString(@"(not set)", nil)];
     }
     [machineName release];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    [self _setViewState];
 }
 
 @end
