@@ -13,6 +13,8 @@
 // TODO: Should this return the object or a copy of the object?
 - (SKMConfigEntry *)selectedConfig {
     NSUInteger selectedIndex = [self selectionIndex];
+    if (selectedIndex == NSNotFound)
+        return nil;
     return (SKMConfigEntry *)[[self content] objectAtIndex:selectedIndex];
 }
 
