@@ -68,9 +68,13 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     
     NSArray *configArray = nil;
     NSData *encodedConfigList = [defaults objectForKey:@"config.list"];
+    
+    /* we have a list of configurations, try to decode them */
     if (encodedConfigList != nil)
         configArray = [NSKeyedUnarchiver unarchiveObjectWithData:encodedConfigList];
-    
+
+    /* if we don't have any configurations at all, create a default config
+     * and prime the config list with it */
     if (configArray == nil || [configArray count] == 0) {
         SKMConfigEntry *config = [[SKMConfigEntry alloc] init];
         config.name = NSLocalizedString(@"Default", nil);
@@ -79,18 +83,25 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         [configList addObject:config];
         
         [config release];
-        
+
+    /* we have configurations, create the array and try to pull the
+     * previously selected configuration */
     } else {
         configList = [NSMutableArray arrayWithCapacity:[configArray count]];
         [configList addObjectsFromArray:configArray];
         selectedConfigIndex = [defaults integerForKey:@"config.active"];
+        
+        /* if we couldn't find a selected config (shouldn't happen), then
+         * just treat the first item as our selected config */
         if (selectedConfigIndex >= [configList count])
             selectedConfigIndex = 0;
     }
-    
+
+    /* setup the NSArrayController subclass with our list and selection */
     [configListController setContent:configList];
     [configListController setSelectionIndex:selectedConfigIndex];
-    
+
+    /* at this point, we have clean, unchanged configurations */
     hasConfigChanged = FALSE;
 }
 
@@ -104,7 +115,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     [defaults setInteger:[configListController selectionIndex]
                   forKey:@"config.active"];
     [defaults synchronize];
-    
+
+    /* at this point, we have clean, unchanged configurations */
     hasConfigChanged = FALSE;
 }
 
@@ -121,19 +133,22 @@ NSInteger compareViews(id firstView, id secondView, void *context);
      forKeyPath:@"firstResponder"
      options:NSKeyValueObservingOptionOld
      context:nil];
-    
+
+    /* we watch the config list for changes to determine whether we
+     * need to enable or disable the '-' button */
     [configListController
      addObserver:self
      forKeyPath:@"arrangedObjects"
      options:NSKeyValueObservingOptionNew
      context:nil];
-    
+
+    /* the the initial state for the '-' button */
     if ([[configListController content] count] > 1) {
         [removeLocationButton setEnabled:YES];
     } else {
         [removeLocationButton setEnabled:NO];
     }
-    
+
     [NSApp beginSheet:editLocationsPanel
        modalForWindow:self.window
         modalDelegate:self
@@ -150,9 +165,11 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         (SKMConfigEntry *)[configListController newObject];
     [configListController addObject:newLocation];
     [newLocation release];
-    
+
+    /* if we add a location, we know we can remove it */
     [removeLocationButton setEnabled:YES];
-    
+
+    /* we want to preselect our new entry and make it editable */
     [configListTable
      selectRowIndexes:[NSIndexSet
                        indexSetWithIndex:([[configListController content] count] - 1)]
@@ -177,13 +194,16 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     
     [configListController removeObjectAtArrangedObjectIndex:selectedRow];
 
+    /* if the selected row was the last row in the list, then we
+     * need to make the selected row the last row of the new list */
     if (selectedRow == rows - 1)
         selectedRow--;
     
     [configListTable
      selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedRow]
      byExtendingSelection:NO];
-    
+
+    /* if we only have one row, we can't remove it */
     if ([configListTable numberOfRows] <= 1)
         [removeLocationButton setEnabled:NO];
 }
@@ -248,12 +268,17 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         [locationMenu selectItemAtIndex:0];
         selectedLocationItem = [locationMenu selectedItem];
     }
-    
+
+    /* this becomes a fallback for when we can't figure out which
+     * config entry should be selected in the dropdown */
     selectedLocationTitle = [selectedLocationItem title];
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
 {
+    
+    /* the only time we care to listen for configuration changes is when
+     * our window is key (the user can't make changes otherwise) */
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(processConfigChangedEvent:)
@@ -264,6 +289,13 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 - (BOOL)windowShouldClose:(id)sender
 {
     BOOL shouldClose = TRUE;
+    
+    /* if the configuration has changed, we want to present them
+     * with a confirmation dialog
+     *
+     * NOTE: if sender is nil, that means we're being called in a
+     *       termination context, in which case, we don't give them an
+     *       option to cancel the close action */
     if (hasConfigChanged) {
         NSBeginAlertSheet(
             NSLocalizedString(@"Unsaved Changes", nil),
@@ -292,7 +324,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
      name:SKMConfigChangedNotification
      object:nil];
 
-    /* we're closing, notify ourselves that our window is closing */
+    /* we're closing, notify others (mainly, the app delegate)
+     * that our window is closing */
     [[NSNotificationCenter defaultCenter]
      postNotificationName:SKMLastWindowClosedNotification
      object:self];
@@ -308,19 +341,27 @@ NSInteger compareViews(id firstView, id secondView, void *context);
             contextInfo:(void *)contextInfo
 {
     switch (returnCode) {
+
+        /* default is "Save & Apply" */
         case (NSAlertDefaultReturn):
             [self _saveSettings];
             [(NSWindow *)contextInfo close];
             break;
+            
+        /* alternate is "Don't Save" */
         case (NSAlertAlternateReturn):
             [self _loadSettings];
             [(NSWindow *)contextInfo close];
             break;
+            
+        /* other is "Cancel", in which case, we do nothing */
     }
 }
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
 {
+    /* we've finished editing a cell in the config list
+     * make sure they didn't put in a blank or duplicate config name */
     if (control == configListTable) {
         NSString *value = [fieldEditor string];
         if ([value isEqualToString:@""]) {

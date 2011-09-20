@@ -54,6 +54,8 @@
 
 - (void)awakeFromNib
 {
+    /* we watch selection state and config type to trigger view
+     * changes based on client/server type */
     [configListController
      addObserver:self
      forKeyPath:@"selectionIndex"
@@ -87,6 +89,8 @@
     [machineName release];
 }
 
+/* any time our selection or config type changes, we want to
+ * recalculate what our view should be */
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change

@@ -73,6 +73,8 @@
 {
     NSApplicationTerminateReply replyCode = NSTerminateNow;
 
+    /* if our window is active, have it close cleanly, prompting
+     * the user to save or discard any changes (WE WILL EXIT!) */
     if ([self isWindowActive]) {
         isApplicationTerminating = TRUE;
         [self configureSynergy:nil];
@@ -163,11 +165,6 @@
      * activation/deactivation steps easier */
     [[settingsWindowController window] makeKeyAndOrderFront:nil];
     [NSApp activateIgnoringOtherApps:TRUE];
-}
-
-- (void)reloadConfiguration:(id)sender
-{
-    
 }
 
 - (void)trackApplicationActivation:(NSNotification *)activateNote

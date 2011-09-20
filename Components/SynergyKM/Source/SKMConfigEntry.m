@@ -138,6 +138,7 @@
     [encoder encodeInteger:self.logLevel forKey:@"logLevel"];
 }
 
+/* we watch this so anyone who cares will know something changed */
 - (void)didChangeValueForKey:(NSString *)key
 {
     [[NSNotificationCenter defaultCenter]

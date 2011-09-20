@@ -65,6 +65,7 @@
     return entry;
 }
 
+/* we track this so anyone who cares can detect config changes */
 - (void)didChangeValueForKey:(NSString *)key
 {
     [[NSNotificationCenter defaultCenter]
