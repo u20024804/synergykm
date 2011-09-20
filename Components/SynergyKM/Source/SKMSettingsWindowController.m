@@ -37,6 +37,7 @@
 
 @property (retain) NSString *selectedLocationTitle;
 @property (retain) NSMutableArray *configList;
+@property (assign) BOOL hasConfigChanged;
 
 @end
 
@@ -54,6 +55,7 @@
 
 @synthesize selectedLocationTitle;
 @synthesize configList;
+@synthesize hasConfigChanged;
 
 
 NSInteger compareViews(id firstView, id secondView, void *context);
@@ -88,6 +90,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     
     [configListController setContent:configList];
     [configListController setSelectionIndex:selectedConfigIndex];
+    
+    hasConfigChanged = FALSE;
 }
 
 - (void)_saveSettings
@@ -100,6 +104,8 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     [defaults setInteger:[configListController selectionIndex]
                   forKey:@"config.active"];
     [defaults synchronize];
+    
+    hasConfigChanged = FALSE;
 }
 
 
@@ -244,23 +250,73 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     }
     
     selectedLocationTitle = [selectedLocationItem title];
-
-    /* we want to know when our window closes so we can notify our app */
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(processWindowCloseEvent:)
-     name:NSWindowWillCloseNotification
-     object:self.window];
 }
 
-- (void)processWindowCloseEvent:(NSNotification *)windowClosingNotification
+- (void)windowDidBecomeKey:(NSNotification *)notification
 {
-    [self _saveSettings];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(processConfigChangedEvent:)
+     name:SKMConfigChangedNotification
+     object:nil];
+}
+
+- (BOOL)windowShouldClose:(id)sender
+{
+    BOOL shouldClose = TRUE;
+    if (hasConfigChanged) {
+        NSBeginAlertSheet(
+            NSLocalizedString(@"Unsaved Changes", nil),
+            NSLocalizedString(@"Save & Apply", nil),
+            NSLocalizedString(@"Don't Save", nil),
+            sender == nil ? nil : NSLocalizedString(@"Cancel", nil),
+            [self window],
+            self,
+            @selector(saveModalDidEnd:returnCode:contextInfo:),
+            nil,
+            [self window],
+            NSLocalizedString(
+                @"Would you like to save and apply your changes before closing the configuration window?",
+                nil));
+        
+        shouldClose = FALSE;
+    }
     
+    return shouldClose;
+}
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self
+     name:SKMConfigChangedNotification
+     object:nil];
+
     /* we're closing, notify ourselves that our window is closing */
     [[NSNotificationCenter defaultCenter]
      postNotificationName:SKMLastWindowClosedNotification
      object:self];
+}
+
+- (void)processConfigChangedEvent:(NSNotification *)changeNotification
+{
+    hasConfigChanged = TRUE;
+}
+
+- (void)saveModalDidEnd:(NSWindow *)sheet
+             returnCode:(NSInteger)returnCode
+            contextInfo:(void *)contextInfo
+{
+    switch (returnCode) {
+        case (NSAlertDefaultReturn):
+            [self _saveSettings];
+            [(NSWindow *)contextInfo close];
+            break;
+        case (NSAlertAlternateReturn):
+            [self _loadSettings];
+            [(NSWindow *)contextInfo close];
+            break;
+    }
 }
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
@@ -306,6 +362,11 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         } else {
             [removeLocationButton setEnabled:NO];
         }
+    } else {
+        [super observeValueForKeyPath:keyPath
+                             ofObject:object
+                               change:change
+                              context:context];
     }
 }
 

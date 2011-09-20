@@ -35,7 +35,7 @@
 #import "SKMSettingsClientConfigurationController.h"
 
 @interface SKMSettingsWindowController : NSWindowController
-<NSTableViewDataSource, NSTableViewDelegate> {
+<NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate> {
     NSPopUpButton *locationMenu;
     
     SKMConfigListController *configListController;

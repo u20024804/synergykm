@@ -7,6 +7,7 @@
 //
 
 #import "SKMConfigListController.h"
+#import "SKMCommon.h"
 
 @implementation SKMConfigListController
 
@@ -62,6 +63,14 @@
     
     entry.name = newLabel;
     return entry;
+}
+
+- (void)didChangeValueForKey:(NSString *)key
+{
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SKMConfigChangedNotification
+     object:self];
+    [super didChangeValueForKey:key];
 }
 
 @end

@@ -57,14 +57,30 @@
 
 - (void)becomeMenuOnly:(NSNotification *)menuOnlyNotification
 {
-    if (activeApp != nil) {
+    /* if we're called here and we're terminating, it means an open
+     * window is closing and we need to exit cleanly now */
+    if (isApplicationTerminating) {
+        [[NSApplication sharedApplication]
+         replyToApplicationShouldTerminate:NSTerminateNow];
+    
+    /* otherwise, we make the last active application active */
+    } else if (activeApp != nil) {
         [activeApp activateWithOptions:0];
     }
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)launchNote
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
+    NSApplicationTerminateReply replyCode = NSTerminateNow;
 
+    if ([self isWindowActive]) {
+        isApplicationTerminating = TRUE;
+        [self configureSynergy:nil];
+        if ([settingsWindowController windowShouldClose:nil] == FALSE)
+        	replyCode = NSTerminateLater;
+    }
+
+    return replyCode;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)terminateNote
@@ -90,6 +106,8 @@
 
 - (void)awakeFromNib
 {
+    isApplicationTerminating = FALSE;
+
     settingsWindowController = [[SKMSettingsWindowController alloc]
                                 initWithWindowNibName:@"Settings"];
 

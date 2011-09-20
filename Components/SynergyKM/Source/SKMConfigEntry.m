@@ -30,6 +30,7 @@
 //  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "SKMConfigEntry.h"
+#import "SKMCommon.h"
 
 #define DEFAULT_HEARTBEAT_MILLISECONDS 250
 #define DEFAULT_SWITCHLOCK_MILLISECONDS 250
@@ -135,6 +136,14 @@
     [encoder encodeInteger:self.switchLockMilliSeconds forKey:@"switchLockMilliSeconds"];
 
     [encoder encodeInteger:self.logLevel forKey:@"logLevel"];
+}
+
+- (void)didChangeValueForKey:(NSString *)key
+{
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SKMConfigChangedNotification
+     object:self];
+    [super didChangeValueForKey:key];
 }
 
 @end

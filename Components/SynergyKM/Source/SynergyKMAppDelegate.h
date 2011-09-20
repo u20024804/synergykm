@@ -46,6 +46,8 @@
 
     NSRunningApplication *activeApp;
     NSRunningApplication *lastDeactivatedApp;
+    
+    BOOL isApplicationTerminating;
 }
 
 @property (retain) SKMSettingsWindowController *settingsWindowController;
