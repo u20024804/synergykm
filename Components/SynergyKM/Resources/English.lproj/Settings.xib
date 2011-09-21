@@ -66,6 +66,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{130, 270}, {62, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="262305977"/>
 							<string key="NSReuseIdentifierKey">_NS:3936</string>
 							<bool key="NSEnabled">YES</bool>
@@ -105,6 +106,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{194, 264}, {154, 26}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1016542741"/>
 							<string key="NSReuseIdentifierKey">_NS:179</string>
 							<bool key="NSEnabled">YES</bool>
@@ -181,6 +183,7 @@
 							<int key="NSvFlags">18</int>
 							<string key="NSFrame">{{13, 10}, {453, 244}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="173812809"/>
 							<string key="NSReuseIdentifierKey">_NS:461</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
@@ -203,6 +206,7 @@
 																<int key="NSvFlags">268</int>
 																<string key="NSFrame">{{16, 107}, {316, 32}}</string>
 																<reference key="NSSuperview" ref="407555856"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="478899383"/>
 																<string key="NSReuseIdentifierKey">_NS:161</string>
 																<bool key="NSEnabled">YES</bool>
@@ -233,6 +237,7 @@
 																<int key="NSvFlags">268</int>
 																<string key="NSFrame">{{34, 80}, {299, 28}}</string>
 																<reference key="NSSuperview" ref="407555856"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="62893547"/>
 																<string key="NSReuseIdentifierKey">_NS:3936</string>
 																<bool key="NSEnabled">YES</bool>
@@ -256,6 +261,7 @@
 																<int key="NSvFlags">268</int>
 																<string key="NSFrame">{{16, 41}, {316, 32}}</string>
 																<reference key="NSSuperview" ref="407555856"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="353792057"/>
 																<string key="NSReuseIdentifierKey">_NS:161</string>
 																<bool key="NSEnabled">YES</bool>
@@ -282,6 +288,7 @@
 																<int key="NSvFlags">268</int>
 																<string key="NSFrame">{{34, 14}, {295, 28}}</string>
 																<reference key="NSSuperview" ref="407555856"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="793953032"/>
 																<string key="NSReuseIdentifierKey">_NS:3936</string>
 																<bool key="NSEnabled">YES</bool>
@@ -299,12 +306,14 @@
 														</array>
 														<string key="NSFrame">{{1, 1}, {348, 150}}</string>
 														<reference key="NSSuperview" ref="432489930"/>
+														<reference key="NSWindow"/>
 														<reference key="NSNextKeyView" ref="592772909"/>
 														<string key="NSReuseIdentifierKey">_NS:632</string>
 													</object>
 												</array>
 												<string key="NSFrame">{{41, 41}, {350, 152}}</string>
 												<reference key="NSSuperview" ref="173812809"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="407555856"/>
 												<string key="NSReuseIdentifierKey">_NS:630</string>
 												<string key="NSOffsets">{0, 0}</string>
@@ -338,6 +347,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{127, 20}, {68, 17}}</string>
 												<reference key="NSSuperview" ref="173812809"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="91804058"/>
 												<string key="NSReuseIdentifierKey">_NS:3936</string>
 												<bool key="NSEnabled">YES</bool>
@@ -357,6 +367,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{197, 13}, {109, 26}}</string>
 												<reference key="NSSuperview" ref="173812809"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:179</string>
 												<bool key="NSEnabled">YES</bool>
@@ -440,6 +451,7 @@
 										</array>
 										<string key="NSFrame">{{10, 33}, {433, 198}}</string>
 										<reference key="NSSuperview" ref="1016542741"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="432489930"/>
 										<string key="NSReuseIdentifierKey">_NS:463</string>
 									</object>
@@ -462,6 +474,7 @@
 														<int key="NSvFlags">268</int>
 														<string key="NSFrame">{{222, 95}, {200, 28}}</string>
 														<reference key="NSSuperview" ref="43883250"/>
+														<reference key="NSNextKeyView"/>
 														<string key="NSReuseIdentifierKey">_NS:3936</string>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSTextFieldCell" key="NSCell" id="394871062">
@@ -587,6 +600,7 @@
 					</array>
 					<string key="NSFrameSize">{479, 308}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="48690697"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -1271,6 +1285,22 @@
 					</object>
 					<int key="connectionID">335</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedIndex: selection.logLevel</string>
+						<reference key="source" ref="91804058"/>
+						<reference key="destination" ref="736284075"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="91804058"/>
+							<reference key="NSDestination" ref="736284075"/>
+							<string key="NSLabel">selectedIndex: selection.logLevel</string>
+							<string key="NSBinding">selectedIndex</string>
+							<string key="NSKeyPath">selection.logLevel</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">350</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -1848,9 +1878,138 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">335</int>
+			<int key="maxID">350</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">SKMConfigListController</string>
+					<string key="superclassName">NSArrayController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SKMConfigListController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SKMSettingsClientConfigurationController</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="clientNameLabel">NSTextField</string>
+						<string key="clientView">NSView</string>
+						<string key="configListController">SKMConfigListController</string>
+						<string key="configurationTab">NSTabViewItem</string>
+						<string key="serverAddressField">NSTextField</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="clientNameLabel">
+							<string key="name">clientNameLabel</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="clientView">
+							<string key="name">clientView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="configListController">
+							<string key="name">configListController</string>
+							<string key="candidateClassName">SKMConfigListController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="configurationTab">
+							<string key="name">configurationTab</string>
+							<string key="candidateClassName">NSTabViewItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="serverAddressField">
+							<string key="name">serverAddressField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SKMSettingsClientConfigurationController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SKMSettingsWindowController</string>
+					<string key="superclassName">NSWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addLocation:">id</string>
+						<string key="changeLocation:">id</string>
+						<string key="editLocations:">id</string>
+						<string key="finishEditingLocations:">id</string>
+						<string key="removeLocation:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addLocation:">
+							<string key="name">addLocation:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="changeLocation:">
+							<string key="name">changeLocation:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="editLocations:">
+							<string key="name">editLocations:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="finishEditingLocations:">
+							<string key="name">finishEditingLocations:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="removeLocation:">
+							<string key="name">removeLocation:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addLocationButton">NSButton</string>
+						<string key="clientController">SKMSettingsClientConfigurationController</string>
+						<string key="configListController">SKMConfigListController</string>
+						<string key="configListTable">NSTableView</string>
+						<string key="editLocationsPanel">NSPanel</string>
+						<string key="editLocationsView">NSView</string>
+						<string key="locationMenu">NSPopUpButton</string>
+						<string key="removeLocationButton">NSButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addLocationButton">
+							<string key="name">addLocationButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="clientController">
+							<string key="name">clientController</string>
+							<string key="candidateClassName">SKMSettingsClientConfigurationController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="configListController">
+							<string key="name">configListController</string>
+							<string key="candidateClassName">SKMConfigListController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="configListTable">
+							<string key="name">configListTable</string>
+							<string key="candidateClassName">NSTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="editLocationsPanel">
+							<string key="name">editLocationsPanel</string>
+							<string key="candidateClassName">NSPanel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="editLocationsView">
+							<string key="name">editLocationsView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="locationMenu">
+							<string key="name">locationMenu</string>
+							<string key="candidateClassName">NSPopUpButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="removeLocationButton">
+							<string key="name">removeLocationButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SKMSettingsWindowController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
