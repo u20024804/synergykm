@@ -127,11 +127,15 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 {
     SKMConfigEntry *config = [configListController selectedConfig];
     if (config == nil || !config.isServerConfig) {
-        [configTabView removeTabViewItem:serverConfigTab];
-        [configTabView addTabViewItem:clientConfigTab];
+        if ([serverConfigTab tabView] != nil)
+            [configTabView removeTabViewItem:serverConfigTab];
+        if ([clientConfigTab tabView] == nil)
+            [configTabView addTabViewItem:clientConfigTab];
     } else {
-        [configTabView removeTabViewItem:clientConfigTab];
-        [configTabView addTabViewItem:serverConfigTab];
+        if ([clientConfigTab tabView] != nil)
+            [configTabView removeTabViewItem:clientConfigTab];
+        if ([serverConfigTab tabView] == nil)
+            [configTabView addTabViewItem:serverConfigTab];
     }
 }
 
