@@ -42,39 +42,9 @@
 
 @synthesize configListController;
 
-- (void)_setViewState
-{    
-    SKMConfigEntry *config = [configListController selectedConfig];
-    if (config != nil) {
-        [clientView setHidden:config.isServerConfig];
-    } else {
-        [clientView setHidden:FALSE];
-    }
-}
-
 - (void)awakeFromNib
 {
-    /* we watch selection state and config type to trigger view
-     * changes based on client/server type */
-    [configListController
-     addObserver:self
-     forKeyPath:@"selectionIndex"
-     options:0
-     context:nil];
-    
-    [configListController
-     addObserver:self
-     forKeyPath:@"arrangedObjects.isServerConfig"
-     options:0
-     context:nil];
-    
-    [self _setViewState];
     [self updateMachineName];
-}
-
-- (void)updateConfiguration
-{
-    [self _setViewState];
 }
 
 - (void)updateMachineName
@@ -87,16 +57,6 @@
         [clientNameLabel setStringValue:NSLocalizedString(@"(not set)", nil)];
     }
     [machineName release];
-}
-
-/* any time our selection or config type changes, we want to
- * recalculate what our view should be */
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    [self _setViewState];
 }
 
 @end

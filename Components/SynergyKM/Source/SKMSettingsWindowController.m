@@ -43,6 +43,9 @@
 
 @implementation SKMSettingsWindowController
 @synthesize locationMenu;
+@synthesize configTabView;
+@synthesize clientConfigTab;
+@synthesize serverConfigTab;
 
 @synthesize configListController;
 @synthesize clientController;
@@ -120,6 +123,17 @@ NSInteger compareViews(id firstView, id secondView, void *context);
     hasConfigChanged = FALSE;
 }
 
+- (void)_setViewState
+{
+    SKMConfigEntry *config = [configListController selectedConfig];
+    if (config == nil || !config.isServerConfig) {
+        [configTabView removeTabViewItem:serverConfigTab];
+        [configTabView addTabViewItem:clientConfigTab];
+    } else {
+        [configTabView removeTabViewItem:clientConfigTab];
+        [configTabView addTabViewItem:serverConfigTab];
+    }
+}
 
 #pragma Interface actions
 
@@ -255,6 +269,22 @@ NSInteger compareViews(id firstView, id secondView, void *context);
 
 - (void)awakeFromNib
 {
+    /* we watch selection state and config type to trigger view
+     * changes based on client/server type */
+    [configListController
+     addObserver:self
+     forKeyPath:@"selectionIndex"
+     options:0
+     context:nil];
+    
+    [configListController
+     addObserver:self
+     forKeyPath:@"arrangedObjects.isServerConfig"
+     options:0
+     context:nil];
+    
+    [configTabView removeTabViewItem:serverConfigTab];
+    
     [self _loadSettings];
 }
 
@@ -397,12 +427,18 @@ NSInteger compareViews(id firstView, id secondView, void *context);
         [editLocationsView
          sortSubviewsUsingFunction:compareViews
          context:nil];
+
     } else if ([keyPath isEqualToString:@"arrangedObjects"]) {
         if ([[configListController content] count] > 1) {
             [removeLocationButton setEnabled:YES];
         } else {
             [removeLocationButton setEnabled:NO];
         }
+
+    } else if ([keyPath isEqualToString:@"selectionIndex"] ||
+               [keyPath isEqualToString:@"arrangedObjects.isServerConfig"]) {
+        [self _setViewState];
+
     } else {
         [super observeValueForKeyPath:keyPath
                              ofObject:object

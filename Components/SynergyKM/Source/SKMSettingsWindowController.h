@@ -37,6 +37,9 @@
 @interface SKMSettingsWindowController : NSWindowController
 <NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate> {
     NSPopUpButton *locationMenu;
+    NSTabView *configTabView;
+    NSTabViewItem *clientConfigTab;
+    NSTabViewItem *serverConfigTab;
     
     SKMConfigListController *configListController;
     SKMSettingsClientConfigurationController *clientController;
@@ -49,6 +52,9 @@
 }
 
 @property (retain) IBOutlet NSPopUpButton *locationMenu;
+@property (retain) IBOutlet NSTabView *configTabView;
+@property (retain) IBOutlet NSTabViewItem *clientConfigTab;
+@property (retain) IBOutlet NSTabViewItem *serverConfigTab;
 
 @property (retain) IBOutlet SKMConfigListController *configListController;
 @property (retain) IBOutlet
